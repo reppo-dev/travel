@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb4a2","on-background":"#1c1b1a","on-surface":"#1c1b1a","secondary-container":"#c9e3f7","on-error":"#ffffff","secondary":"#486172","on-secondary-fixed-variant":"#314a5a","secondary-fixed-dim":"#b0cadd","tertiary-container":"#64796e","surface-container-high":"#ece7e5","inverse-primary":"#ffb4a2","on-secondary-fixed":"#011e2d","on-tertiary":"#ffffff","surface-tint":"#a04028","inverse-surface":"#31302f","on-tertiary-fixed":"#0b1f17","on-primary-fixed":"#3c0700","primary-container":"#bd553b","surface-container-low":"#f7f3f0","background":"#fdf8f6","on-surface-variant":"#56423d","inverse-on-surface":"#f4f0ee","error":"#ba1a1a","on-primary-fixed-variant":"#802913","surface-bright":"#fdf8f6","surface-variant":"#e6e2df","surface-container":"#f2edeb","on-tertiary-container":"#f5fff7","surface-container-highest":"#e6e2df","on-error-container":"#93000a","tertiary-fixed":"#d1e8da","on-primary-container":"#fffbff","on-secondary":"#ffffff","on-primary":"#ffffff","outline-variant":"#ddc0ba","on-secondary-container":"#4d6677","surface-dim":"#ddd9d7","surface-container-lowest":"#ffffff","tertiary":"#4c6156","secondary-fixed":"#cce6fa","on-tertiary-fixed-variant":"#374b41","error-container":"#ffdad6","outline":"#8a726c","surface":"#fdf8f6","tertiary-fixed-dim":"#b5ccbf","primary":"#9d3d26","primary-fixed":"#ffdad2"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"48px","margin-mobile":"16px","space-sm":"8px","margin-desktop":"24px","space-lg":"24px","gutter-mobile":"12px","space-base":"16px","space-xl":"32px","space-xs":"4px","gutter-desktop":"16px","space-md":"12px","space-2xs":"2px"},fontFamily:{"headline-lg-mobile":["Geist"],"label-ui":["Geist"],"headline-lg":["Geist"],"display-hero-mobile":["Geist"],"label-mono-md":["JetBrains Mono"],"display-hero":["Geist"],"body-sm":["Geist"],"label-mono-sm":["JetBrains Mono"],"body-lg":["Geist"],"headline-sm":["Geist"],"body-md":["Geist"],"headline-md":["Geist"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero-mobile":["34px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-mono-md":["12px",{"lineHeight":"16px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-hero":["48px",{"lineHeight":"52px","letterSpacing":"-0.035em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-low border-r border-surface-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="p-space-base border-b border-surface-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-semibold"><span class="material-symbols-outlined text-[18px]">explore</span></div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Wanderly</span><span class="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-on-surface">Personal & Trips <span class="material-symbols-outlined text-[14px]">unfold_more</span></span></div></div></div><div class="p-space-base pb-space-xs"><div class="flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest border border-surface-variant rounded text-on-surface-variant hover:border-outline transition-all cursor-pointer"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Search...</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant">⌘K</span></div></div><nav class="flex flex-col gap-0.5 px-space-sm pt-space-xs" data-active-classes="bg-surface-container-highest text-on-surface font-medium"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded transition-colors bg-surface-container-highest text-on-surface font-medium" data-path="trips" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span class="font-body-md text-body-md">My Trips</span></div><span class="font-label-mono-sm text-label-mono-sm bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full">3 active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="calendar" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-body-md text-body-md">Calendar</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="places" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">pin_drop</span><span class="font-body-md text-body-md">Places</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="packing" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md text-body-md">Packing</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">18/24</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="expenses" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Expenses</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-body-md text-body-md">Documents</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">6</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md">Settings</span></div></a></nav></div><div class="p-space-sm border-t border-surface-variant flex flex-col gap-space-sm"><button class="w-full flex items-center justify-center gap-1.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded font-label-ui text-label-ui font-medium transition-colors"><span class="material-symbols-outlined text-[16px]">add</span> New Trip</button><div class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-ui text-label-ui font-semibold">AC</div><div class="flex flex-col leading-tight"><span class="font-label-ui text-label-ui font-medium text-on-surface">Alex Chen</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate max-w-[110px]">alex.chen@craft.co</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">more_vert</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface/80 backdrop-blur-xl border-b border-surface-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Trips</span><span>/</span><span class="text-on-surface font-medium">Spring 2027</span></div><div class="h-3.5 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container border border-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-label-ui text-label-ui font-medium text-on-surface">Tokyo Spring 2027</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span><span>Synced</span></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface border border-surface-variant font-label-ui text-label-ui text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[15px]">share</span> Share</button><button class="w-7 h-7 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-variant ml-1" src="https://lh3.googleusercontent.com/aida/AEtjO1XOHhz56DJBiG2uDemeatmaaRCVb3L64Vgas6UyTxxRJs2Ly2DLMdNC-71xfYekqS644BipYr5h0J5LOVhEiFcqexF-Up_ltf1V3e4W446uFcEJKZ_b0DM1AFmqRqH4JFrvABlapA182UtPnEJLJoH9u29uKhg3TmxiNPj8FJRhlmt_dS6xrGQIet3x_Qfp9gPnxz-qJmx63VGOMJRAHJ8SlFAtKkWLX8TWTCMJ2a9FoavhpU-Wv1Nv7A"/></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<script>
+    (function() {
+      const links = document.querySelectorAll('aside nav a');
+      links.forEach(l => {
+        if(l.getAttribute('data-path') === 'settings') {
+          l.className = "flex items-center justify-between px-space-sm py-1.5 rounded bg-surface-container-highest text-on-surface font-medium transition-colors";
+        } else {
+          l.classList.remove('bg-surface-container-highest', 'font-medium');
+        }
+      });
+    })();
+  </script>
+<div class="p-space-lg max-w-[1360px] mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Settings Banner & Quick Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md border-b border-surface-variant">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">Settings</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container border border-surface-variant text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            All systems synced to cloud
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Manage your personal account, travel telemetry preferences, notification engines, security, and connected integrations.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="px-3 py-1.5 bg-surface border border-surface-variant rounded hover:bg-surface-container text-on-surface font-label-ui text-label-ui transition-colors" type="button">
+          Revert Changes
+        </button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded font-label-ui text-label-ui font-medium shadow-sm transition-all active:translate-y-0.5" id="save-settings-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Save Changes</span>
+<span class="font-label-mono-sm text-label-mono-sm opacity-80 pl-1">⌘S</span>
+</button>
+</div>
+</div>
+<!-- Dual Column Workspace Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Sub-Navigation Rail (Col 1-3) -->
+<div class="lg:col-span-3 flex flex-col gap-space-md lg:sticky lg:top-20">
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-xs flex flex-col gap-0.5 shadow-sm">
+<a class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-high text-on-surface font-medium border-l-2 border-primary transition-all" href="#profile">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+<span class="font-body-md text-body-md">Profile & Account</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#telemetry">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-body-md text-body-md">Travel Style & Telemetry</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#notifications">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span class="font-body-md text-body-md">Notification Engine</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">6 active</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#security">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span class="font-body-md text-body-md">Security & Sessions</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-medium">2FA Active</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#integrations">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span class="font-body-md text-body-md">Connected Services</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">4 Connected</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#display">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">view_quilt</span>
+<span class="font-body-md text-body-md">Display & Density</span>
+</div>
+</a>
+</div>
+<!-- Membership Helper Status Card -->
+<div class="bg-surface-container-low border border-surface-variant rounded p-space-base flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Wanderly Pro</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Annual</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-label-mono-sm font-label-mono-sm text-on-surface-variant">
+<span>Cloud Vault Storage</span>
+<span>48.2 MB / 10 GB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 5%"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-variant flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Renews April 18, 2028</span>
+<a class="text-primary hover:underline font-medium" href="#">Billing →</a>
+</div>
+</div>
+</div>
+<!-- Right Content Canvas (Col 4-12) -->
+<div class="lg:col-span-9 flex flex-col gap-space-xl">
+<!-- SECTION A: Account & Travel Identity -->
+<section class="flex flex-col gap-space-md" id="profile">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Account & Travel Identity</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">SEC-ID: WNDR-9941-AC</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden">
+<!-- Profile Top Identity Strip -->
+<div class="p-space-base border-b border-surface-variant flex flex-col md:flex-row items-start md:items-center justify-between gap-space-base bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img alt="Alex Chen" class="w-16 h-16 rounded object-cover border border-surface-variant shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1UF6COw71Cc5pK_Lu3OKG-LGsDtxukgcpEF0BOPU4W3nKEXPKmDoxgbD-OIcKiF7I5xFhVvfDIcBGAQDCQlvnEh1uijo9ZSjm-9vydzVNamdcNrE4sDAGHAApJV3Xwy6iqJyz-WuTPdfui9bl6QY-L1f3hZC3m4k51P4fGGICrAm98XQZwDe_fcDR1DFO232oaHNOvXDnXBWYf63gFcGJig59ALS9SaVLYIEFCDgm8duaF2Te3lIDl1ljc"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary border-2 border-surface-container-lowest" title="Active"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Alex Chen</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]" title="Passport Verified">verified_user</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded font-label-mono-sm text-label-mono-sm">PST • UTC-8</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">mail</span>alex.chen@craft.co</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span>+1 (415) 892-4102</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span>San Francisco, CA</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-surface border border-surface-variant rounded hover:bg-surface-container text-on-surface font-label-ui text-label-ui transition-colors" type="button">
+                  Change Photo
+                </button>
+<button class="px-2.5 py-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded font-label-ui text-label-ui transition-colors" type="button">
+                  Remove
+                </button>
+</div>
+</div>
+<!-- Travel Vitals Telemetry Ribbon -->
+<div class="px-space-base py-2.5 bg-surface-container-low border-b border-surface-variant grid grid-cols-2 sm:grid-cols-4 gap-space-sm font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<div><span class="text-on-surface font-semibold">14</span> Active & Past Trips</div>
+<div><span class="text-on-surface font-semibold">18</span> Countries Visited</div>
+<div><span class="text-on-surface font-semibold">412,800</span> Lifetime Miles</div>
+<div>Member since <span class="text-on-surface font-semibold">May 2024</span></div>
+</div>
+<!-- Form Fields Grid -->
+<div class="p-space-base grid grid-cols-1 md:grid-cols-2 gap-space-base">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface flex items-center justify-between">
+<span>First Name</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Legal ICAO</span>
+</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20" type="text" value="Alex"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface flex items-center justify-between">
+<span>Last Name</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Legal ICAO</span>
+</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20" type="text" value="Chen"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface flex items-center justify-between">
+<span>Public Handle & Share ID</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">wanderly.me/alexchen</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-mono-md text-label-mono-md text-on-surface-variant">@</span>
+<input class="w-full pl-7 pr-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20" type="text" value="alexchen"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface flex items-center justify-between">
+<span>Primary Passport Nationality</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">e-Passport Linked</span>
+</label>
+<div class="relative">
+<input class="w-full px-3 py-2 bg-surface-container-low border border-surface-variant rounded font-body-md text-body-md text-on-surface cursor-not-allowed" readonly="" type="text" value="United States (USA) • Exp Oct 2030"/>
+<span class="material-symbols-outlined text-[16px] absolute right-3 top-2.5 text-tertiary">lock</span>
+</div>
+</div>
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface flex items-center justify-between">
+<span>Emergency Travel Contact (Consular & Medical Protocol)</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Encrypted</span>
+</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20" type="text" value="Maya Lin (+1 415-555-0192) — Partner & Co-Traveler"/>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION B: Travel Intelligence & Experience Preferences -->
+<section class="flex flex-col gap-space-md" id="telemetry">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Travel Intelligence & Experience Preferences</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Adaptive Engine v4.2</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded shadow-sm p-space-base flex flex-col gap-space-base">
+<!-- Travel Archetype Tags -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui font-medium text-on-surface">Travel Style Archetypes</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Select 3-5 focus tags for smart itinerary routing</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-ui text-label-ui font-medium border border-primary flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[14px]">hiking</span>
+                  Adventure & Exploration
+                  <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-ui text-label-ui font-medium border border-primary flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[14px]">architecture</span>
+                  Design & Architecture
+                  <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-ui text-label-ui font-medium border border-primary flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[14px]">restaurant</span>
+                  Culinary & Specialty Coffee
+                  <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container border border-surface-variant text-on-surface hover:bg-surface-container-high font-label-ui text-label-ui transition-colors" type="button">
+                  Luxury & Boutique Lodging
+                </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container border border-surface-variant text-on-surface hover:bg-surface-container-high font-label-ui text-label-ui transition-colors" type="button">
+                  Solo Backcountry
+                </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container border border-surface-variant text-on-surface hover:bg-surface-container-high font-label-ui text-label-ui transition-colors" type="button">
+                  Family & Leisure
+                </button>
+</div>
+</div>
+<!-- Telemetry Settings Grid -->
+<div class="pt-space-base border-t border-surface-variant grid grid-cols-1 md:grid-cols-2 gap-space-base">
+<!-- Default Currency -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface">Base Accounting Currency</label>
+<div class="relative">
+<select class="w-full px-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:border-primary">
+<option selected="">USD ($) — United States Dollar</option>
+<option>EUR (€) — Euro</option>
+<option>JPY (¥) — Japanese Yen</option>
+<option>GBP (£) — British Pound</option>
+<option>CHF (Fr) — Swiss Franc</option>
+</select>
+<span class="material-symbols-outlined text-[18px] absolute right-3 top-2.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Realtime FX: 1 USD ≈ 154.20 JPY | 0.92 EUR</span>
+</div>
+<!-- Measurement Units -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface">Telemetry Units</label>
+<div class="grid grid-cols-2 gap-1 p-1 bg-surface-container rounded border border-surface-variant">
+<button class="py-1 px-3 rounded bg-surface-container-lowest text-on-surface font-label-ui text-label-ui font-medium shadow-sm border border-surface-variant flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+                    Metric (km, °C, kg)
+                  </button>
+<button class="py-1 px-3 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui transition-colors flex items-center justify-center" type="button">
+                    Imperial (mi, °F, lb)
+                  </button>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Applied across route elevation, speed, and weather</span>
+</div>
+<!-- Transit Pace Bias -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-ui text-label-ui font-medium text-on-surface">Transit Buffer & Scheduling Pace</label>
+<div class="relative">
+<select class="w-full px-3 py-2 bg-surface-container-lowest border border-surface-variant rounded font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:border-primary">
+<option selected="">Balanced (20–30 min buffers between activities)</option>
+<option>High Density (Tight transfers, max spots per day)</option>
+<option>Slow Leisure (45+ min dwell time, flexible stops)</option>
+</select>
+<span class="material-symbols-outlined text-[18px] absolute right-3 top-2.5 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Adaptive Weather Routing Toggle -->
+<div class="flex items-center justify-between p-3 rounded bg-surface-container-low border border-surface-variant self-end">
+<div class="flex flex-col pr-3">
+<span class="font-label-ui text-label-ui font-medium text-on-surface">Precipitation Swap Radar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-suggest indoor venues when rain > 50%</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION C: Notification Matrix & Dispatch Channels -->
+<section class="flex flex-col gap-space-md" id="notifications">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Notification Matrix & Dispatch Channels</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Priority Queues: Active</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<th class="py-2.5 px-4 font-medium">Event Categorization</th>
+<th class="py-2.5 px-4 text-center font-medium w-28">Push</th>
+<th class="py-2.5 px-4 text-center font-medium w-28">Email</th>
+<th class="py-2.5 px-4 text-center font-medium w-28">In-App</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-md text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Severe Weather & Microclimate Alerts</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Typhoon warnings, heat index triggers, transit shutdowns</div>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Document & Visa Expiration Reminders</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Passports < 6 months, JR Pass activation dates, ETA windows</div>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Trip Budget & FX Threshold Warnings</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Category budget breaches > 80%, currency spike triggers</div>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Co-traveler Activity & Itinerary Edits</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Real-time comments, shared pin additions, packing list checks</div>
+</td>
+<td class="py-3 px-4 text-center">
+<input class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Flight Delay & Gate Change Telemetry</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Automated ACARS polling, baggage carousel announcements</div>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-4 text-center">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION D: Connected Integrations & Ecosystem -->
+<section class="flex flex-col gap-space-md" id="integrations">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Connected Integrations & Ecosystem</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">4 / 8 Services Linked</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-base">
+<!-- Card 1: Calendars -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-base flex flex-col justify-between gap-space-base shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Google Calendar & iCal</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected & Synced (3m ago)
+                    </span>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant">2-Way</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Bidirectional sync for flight blocks, hotel check-ins, and reservations directly into alex.chen@craft.co calendar.
+              </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-variant">
+<button class="text-on-surface hover:text-primary font-label-ui text-label-ui transition-colors" type="button">Configure Filters</button>
+<button class="text-error hover:underline font-label-ui text-label-ui" type="button">Disconnect</button>
+</div>
+</div>
+<!-- Card 2: Visit Japan Web -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-base flex flex-col justify-between gap-space-base shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">qr_code_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Visit Japan Web & Customs</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active (Valid to Jul 2027)
+                    </span>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant">FastTrack</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Automatic biometric customs declarations and digital quarantine fast-lane QR generation for Tokyo/KIX ports.
+              </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-variant">
+<button class="text-primary hover:underline font-label-ui text-label-ui font-medium" type="button">Sync QR Pass</button>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">ID: VJW-88219</span>
+</div>
+</div>
+<!-- Card 3: Airline PNR & Loyalty -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-base flex flex-col justify-between gap-space-base shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">flight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Frequent Flyer & PNR Auto-Pull</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> United Premier 1K & ANA
+                    </span>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant">Live PNR</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Automatically extracts e-tickets from your inbox and loads seat assignments, upgrade lists, and boarding passes.
+              </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-variant">
+<button class="text-on-surface hover:text-primary font-label-ui text-label-ui transition-colors" type="button">Manage 2 Programs</button>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Next sync in 12m</span>
+</div>
+</div>
+<!-- Card 4: OpenWeather Radar -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-base flex flex-col justify-between gap-space-base shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">radar</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">OpenWeatherMap Radar Telemetry</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Tokyo / Kyoto Calibrated
+                    </span>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant">5min Feed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Delivers 15-minute hyper-local rain precipitation models and pollen/UV indices for active itinerary coordinates.
+              </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-variant">
+<button class="text-on-surface hover:text-primary font-label-ui text-label-ui transition-colors" type="button">Configure Stations</button>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">100% Signal</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION E: Security, Biometrics & Active Sessions -->
+<section class="flex flex-col gap-space-md mb-8" id="security">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Security & Authorized Sessions</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-medium">SOC-2 Type II Certified</span>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden flex flex-col">
+<!-- 2FA Banner -->
+<div class="p-space-base border-b border-surface-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-medium text-on-surface">Two-Factor Authentication (FIDO2 / YubiKey & Authenticator App)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primary hardware token registered. Last verification: Today, 08:32 AM.</span>
+</div>
+</div>
+<button class="px-3 py-1 bg-surface border border-surface-variant rounded text-on-surface font-label-ui text-label-ui hover:bg-surface-container transition-colors" type="button">
+                Configure Keys
+              </button>
+</div>
+<!-- Active Sessions List -->
+<div class="p-space-base flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1 border-b border-surface-variant font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Active Client Devices</span>
+<button class="text-error hover:underline transition-colors" type="button">Terminate All Other Sessions</button>
+</div>
+<!-- Session Item 1: Current -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">laptop_mac</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">MacBook Pro 16" (Current Device)</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-mono-sm text-label-mono-sm">Active Now</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">San Francisco, United States • Chrome 124.0.6367 • IP: 198.51.100.42</span>
+</div>
+</div>
+<div class="w-2 h-2 rounded-full bg-tertiary" title="Current session"></div>
+</div>
+<!-- Session Item 2: Mobile -->
+<div class="flex items-center justify-between py-2 border-t border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">iPhone 15 Pro</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Wanderly iOS v2.4.1</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">San Francisco, United States • Last active 2 hours ago</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error font-label-mono-sm text-label-mono-sm" type="button">Revoke</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Toast Notification Simulation -->
+<div class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 translate-y-24 opacity-0 pointer-events-none" id="settings-toast">
+<div class="flex items-center gap-3 px-4 py-2.5 bg-inverse-surface text-inverse-on-surface rounded shadow-xl border border-inverse-surface">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-medium">Preferences saved successfully</span>
+<span class="font-label-mono-sm text-label-mono-sm opacity-75">All telemetry nodes updated</span>
+</div>
+<button class="ml-2 font-label-mono-sm text-label-mono-sm text-primary-fixed hover:underline" id="undo-toast-btn" type="button">Undo</button>
+</div>
+</div>
+<script>
+    (function() {
+      const saveBtn = document.getElementById('save-settings-btn');
+      const toast = document.getElementById('settings-toast');
+      const undoBtn = document.getElementById('undo-toast-btn');
+      let timeoutId = null;
+
+      function triggerToast() {
+        if(timeoutId) clearTimeout(timeoutId);
+        toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        timeoutId = setTimeout(() => {
+          hideToast();
+        }, 3800);
+      }
+
+      function hideToast() {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }
+
+      if(saveBtn) {
+        saveBtn.addEventListener('click', triggerToast);
+      }
+      if(undoBtn) {
+        undoBtn.addEventListener('click', hideToast);
+      }
+
+      // Keyboard shortcut ⌘S / Ctrl+S
+      window.addEventListener('keydown', function(e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === 's') {
+          e.preventDefault();
+          triggerToast();
+        }
+      });
+    })();
+  </script>
+</div></main></div></body></html>

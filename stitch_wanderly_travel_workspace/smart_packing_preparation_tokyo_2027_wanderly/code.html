@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb4a2","on-background":"#1c1b1a","on-surface":"#1c1b1a","secondary-container":"#c9e3f7","on-error":"#ffffff","secondary":"#486172","on-secondary-fixed-variant":"#314a5a","secondary-fixed-dim":"#b0cadd","tertiary-container":"#64796e","surface-container-high":"#ece7e5","inverse-primary":"#ffb4a2","on-secondary-fixed":"#011e2d","on-tertiary":"#ffffff","surface-tint":"#a04028","inverse-surface":"#31302f","on-tertiary-fixed":"#0b1f17","on-primary-fixed":"#3c0700","primary-container":"#bd553b","surface-container-low":"#f7f3f0","background":"#fdf8f6","on-surface-variant":"#56423d","inverse-on-surface":"#f4f0ee","error":"#ba1a1a","on-primary-fixed-variant":"#802913","surface-bright":"#fdf8f6","surface-variant":"#e6e2df","surface-container":"#f2edeb","on-tertiary-container":"#f5fff7","surface-container-highest":"#e6e2df","on-error-container":"#93000a","tertiary-fixed":"#d1e8da","on-primary-container":"#fffbff","on-secondary":"#ffffff","on-primary":"#ffffff","outline-variant":"#ddc0ba","on-secondary-container":"#4d6677","surface-dim":"#ddd9d7","surface-container-lowest":"#ffffff","tertiary":"#4c6156","secondary-fixed":"#cce6fa","on-tertiary-fixed-variant":"#374b41","error-container":"#ffdad6","outline":"#8a726c","surface":"#fdf8f6","tertiary-fixed-dim":"#b5ccbf","primary":"#9d3d26","primary-fixed":"#ffdad2"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"48px","margin-mobile":"16px","space-sm":"8px","margin-desktop":"24px","space-lg":"24px","gutter-mobile":"12px","space-base":"16px","space-xl":"32px","space-xs":"4px","gutter-desktop":"16px","space-md":"12px","space-2xs":"2px"},fontFamily:{"headline-lg-mobile":["Geist"],"label-ui":["Geist"],"headline-lg":["Geist"],"display-hero-mobile":["Geist"],"label-mono-md":["JetBrains Mono"],"display-hero":["Geist"],"body-sm":["Geist"],"label-mono-sm":["JetBrains Mono"],"body-lg":["Geist"],"headline-sm":["Geist"],"body-md":["Geist"],"headline-md":["Geist"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero-mobile":["34px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-mono-md":["12px",{"lineHeight":"16px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-hero":["48px",{"lineHeight":"52px","letterSpacing":"-0.035em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-low border-r border-surface-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="p-space-base border-b border-surface-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-semibold"><span class="material-symbols-outlined text-[18px]">explore</span></div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Wanderly</span><span class="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-on-surface">Personal & Trips <span class="material-symbols-outlined text-[14px]">unfold_more</span></span></div></div></div><div class="p-space-base pb-space-xs"><div class="flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest border border-surface-variant rounded text-on-surface-variant hover:border-outline transition-all cursor-pointer"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Search...</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant">⌘K</span></div></div><nav class="flex flex-col gap-0.5 px-space-sm pt-space-xs" data-active-classes="bg-surface-container-highest text-on-surface font-medium"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded transition-colors bg-surface-container-highest text-on-surface font-medium" data-path="trips" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span class="font-body-md text-body-md">My Trips</span></div><span class="font-label-mono-sm text-label-mono-sm bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full">3 active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="calendar" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-body-md text-body-md">Calendar</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="places" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">pin_drop</span><span class="font-body-md text-body-md">Places</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="packing" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md text-body-md">Packing</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">18/24</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="expenses" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Expenses</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-body-md text-body-md">Documents</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">6</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md">Settings</span></div></a></nav></div><div class="p-space-sm border-t border-surface-variant flex flex-col gap-space-sm"><button class="w-full flex items-center justify-center gap-1.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded font-label-ui text-label-ui font-medium transition-colors"><span class="material-symbols-outlined text-[16px]">add</span> New Trip</button><div class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-ui text-label-ui font-semibold">AC</div><div class="flex flex-col leading-tight"><span class="font-label-ui text-label-ui font-medium text-on-surface">Alex Chen</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate max-w-[110px]">alex.chen@craft.co</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">more_vert</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface/80 backdrop-blur-xl border-b border-surface-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Trips</span><span>/</span><span class="text-on-surface font-medium">Spring 2027</span></div><div class="h-3.5 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container border border-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-label-ui text-label-ui font-medium text-on-surface">Tokyo Spring 2027</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span><span>Synced</span></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface border border-surface-variant font-label-ui text-label-ui text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[15px]">share</span> Share</button><button class="w-7 h-7 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-variant ml-1" src="https://lh3.googleusercontent.com/aida/AEtjO1XOHhz56DJBiG2uDemeatmaaRCVb3L64Vgas6UyTxxRJs2Ly2DLMdNC-71xfYekqS644BipYr5h0J5LOVhEiFcqexF-Up_ltf1V3e4W446uFcEJKZ_b0DM1AFmqRqH4JFrvABlapA182UtPnEJLJoH9u29uKhg3TmxiNPj8FJRhlmt_dS6xrGQIet3x_Qfp9gPnxz-qJmx63VGOMJRAHJ8SlFAtKkWLX8TWTCMJ2a9FoavhpU-Wv1Nv7A"/></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Context Sub-Bar -->
+<div class="w-full bg-surface-container-low px-space-lg py-3 flex flex-wrap items-center justify-between gap-y-3">
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Tokyo, Japan (TYO)</span>
+<span>•</span>
+<span class="text-on-surface font-medium">Apr 18 – Apr 27, 2027</span>
+<span>•</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">9 Days</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">partly_cloudy_day</span>
+          19°C Spring Mild
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface border border-outline-variant/30 text-on-surface font-label-ui text-label-ui hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[15px] text-tertiary">cloud_sync</span>
+<span>Weather Auto-Sync</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface border border-outline-variant/30 text-on-surface font-label-ui text-label-ui hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[15px] text-secondary">scale</span>
+<span>Weight Estimator</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary text-on-primary font-label-ui text-label-ui font-medium shadow-sm hover:bg-primary-container transition-all" id="add-item-btn">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Item <span class="font-label-mono-sm text-on-primary/80 ml-0.5">⌘P</span></span>
+</button>
+</div>
+</div>
+<!-- Workspace Subnav Pills -->
+<div class="px-space-lg bg-surface flex items-center justify-between overflow-x-auto">
+<div class="flex items-center gap-1 py-2">
+<a class="px-3 py-1.5 rounded text-on-surface-variant font-label-ui text-label-ui hover:text-on-surface transition-colors" href="#">Overview</a>
+<a class="px-3 py-1.5 rounded text-on-surface-variant font-label-ui text-label-ui hover:text-on-surface transition-colors" href="#">Itinerary <span class="font-label-mono-sm ml-1 text-on-surface-variant/70">9d</span></a>
+<a class="px-3 py-1.5 rounded text-on-surface-variant font-label-ui text-label-ui hover:text-on-surface transition-colors" href="#">Places <span class="font-label-mono-sm ml-1 text-on-surface-variant/70">14</span></a>
+<a class="px-3 py-1.5 rounded bg-surface-container-highest text-on-surface font-label-ui text-label-ui font-semibold flex items-center gap-1.5 shadow-sm" href="#">
+<span>Smart Packing</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary text-on-primary font-label-mono-sm text-label-mono-sm" id="tab-counter">18/24</span>
+</a>
+<a class="px-3 py-1.5 rounded text-on-surface-variant font-label-ui text-label-ui hover:text-on-surface transition-colors" href="#">Expenses</a>
+<a class="px-3 py-1.5 rounded text-on-surface-variant font-label-ui text-label-ui hover:text-on-surface transition-colors" href="#">Documents <span class="font-label-mono-sm ml-1 text-on-surface-variant/70">6</span></a>
+</div>
+<div class="hidden md:flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Checklist Engine v2.4</span>
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span class="text-tertiary">Live Atmospheric Telemetry</span>
+</div>
+</div>
+<!-- Main Canvas (Split Workspace Layout) -->
+<div class="p-space-lg grid grid-cols-1 xl:grid-cols-12 gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Left 8 Columns: Dynamic Checklist Engine & Forecast Advisor -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Dynamic Weather-Driven Packing Intelligence Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-sm border border-outline-variant/20">
+<div class="absolute top-0 right-0 w-80 h-full opacity-10 pointer-events-none bg-gradient-to-l from-primary via-tertiary to-transparent"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">thermostat</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold tracking-wider text-primary uppercase">Weather Intelligence Engine</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Tokyo Shinjuku Stn • 35.6938° N, 139.7034° E</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-0.5">April Microclimate Gear Alert</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+                Frontal low-pressure arrival forecast on Tuesday Apr 21 (Day 4) with 40% precipitation. Shibuya & Roppongi nighttime temperatures plunge to 11°C with brisk northern drafts.
+              </p>
+</div>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-ui text-label-ui font-medium border border-outline-variant/30 flex items-center gap-1.5 transition-colors" id="add-weather-rec-btn">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span>Apply Advisory Items</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4 pt-3 border-t border-outline-variant/20">
+<div class="flex items-start gap-3 p-2.5 rounded bg-surface/80 border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">rainy</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-semibold text-on-surface">Spring Rain Protocol (Day 4)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Compact windproof umbrella & DWR water-repellent shell marked as critical.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2.5 rounded bg-surface/80 border border-outline-variant/15">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">device_thermostat</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-semibold text-on-surface">Diurnal Delta: ~8°C Shift</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pack breathable mid-weight Merino wool base layer for temple walking mornings.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Packing Metric Strip & Weight Allocation -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- Metric 1: Total Completion -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-on-surface-variant">Checklist Total</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-primary/10 text-primary font-medium" id="stat-percent">75%</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-lg font-semibold text-on-surface" id="stat-count">18</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 24 items</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-300" id="stat-bar" style="width: 75%"></div>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> 6 items remaining
+          </span>
+</div>
+<!-- Metric 2: Carry-On Weight -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-on-surface-variant">Carry-On Weight</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary bg-tertiary-fixed/30 px-1.5 py-0.5 rounded">Safe Margin</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-lg font-semibold text-on-surface">6.8</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 10.0 kg</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center justify-between">
+<span>Rimowa Cabin Plus</span>
+<span class="font-medium text-on-surface">3.2 kg spare</span>
+</span>
+</div>
+<!-- Metric 3: Checked Baggage -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-on-surface-variant">Checked Baggage</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-secondary-fixed/40 px-1.5 py-0.5 rounded">ANA Flight 108</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-lg font-semibold text-on-surface">14.2</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 23.0 kg</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 61.7%"></div>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center justify-between">
+<span>Nomatic 30L Vault</span>
+<span class="font-medium text-on-surface">8.8 kg spare</span>
+</span>
+</div>
+<!-- Metric 4: High Priority Readiness -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-on-surface-variant">Mission Critical</span>
+<span class="font-label-mono-sm text-label-mono-sm text-error bg-error-container/40 px-1.5 py-0.5 rounded">Action Req</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">2</span>
+<span class="font-body-md text-body-md text-on-surface-variant">unpacked essentials</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate">
+            Yen Envelope, Rain Shell
+          </span>
+</div>
+</div>
+<!-- Segmented Interactive Checklist Section -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm flex flex-col">
+<!-- Filter Controls & Header -->
+<div class="p-space-base border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-1.5" id="category-pills">
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface bg-surface-container-high font-label-ui text-label-ui font-medium border border-outline-variant/30 flex items-center gap-1.5" data-cat="all">
+<span>All Items</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container-highest" id="cat-all-badge">18/24</span>
+</button>
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui font-medium border border-transparent flex items-center gap-1.5" data-cat="clothing">
+<span>Clothing</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container">7/9</span>
+</button>
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui font-medium border border-transparent flex items-center gap-1.5" data-cat="tech">
+<span>Tech & Optics</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container">5/6</span>
+</button>
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui font-medium border border-transparent flex items-center gap-1.5" data-cat="documents">
+<span>Documents</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container">3/3</span>
+</button>
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui font-medium border border-transparent flex items-center gap-1.5" data-cat="toiletries">
+<span>Toiletries</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container">3/4</span>
+</button>
+<button class="cat-pill px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui font-medium border border-transparent flex items-center gap-1.5" data-cat="gear">
+<span>EDC & Gear</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded-full bg-surface-container">0/2</span>
+</button>
+</div>
+<!-- Quick Filters / Search within list -->
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="material-symbols-outlined text-[16px] absolute left-2.5 top-2 text-on-surface-variant">filter_list</span>
+<input class="pl-8 pr-3 py-1 bg-surface-container-low border border-outline-variant/30 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary w-44" id="checklist-search" placeholder="Filter gear..." type="text"/>
+</div>
+<button class="p-1.5 rounded border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" id="bulk-toggle" title="Toggle Unchecked Only">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Packing Items List View (Linear / Notion Ergonomics) -->
+<div class="flex flex-col divide-y divide-outline-variant/15" id="checklist-container">
+<!-- Item 1 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="tech">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">10,000mAh Anker MagSafe Power Bank</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">38.5Wh</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">luggage</span> Cabin Bag
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">High Priority</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Alex</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.24 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="tech">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Japan Type A Dual Plug Adapters</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-primary/10 text-primary px-1.5 py-0.2 rounded font-medium">x2</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">backpack</span> Personal Sling
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">Shared Essential</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.08 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Weather Critical Unchecked -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 bg-primary/5 hover:bg-primary/10 transition-colors group" data-category="gear">
+<div class="flex items-center gap-3 min-w-0">
+<input class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface font-semibold">Compact Windproof Travel Umbrella</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-error-container text-error px-1.5 py-0.2 rounded font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">umbrella</span> Weather Critical
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">luggage</span> Cabin Bag
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface font-medium">Assigned: Maya</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.28 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Rain Shell Unchecked -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 bg-secondary-container/20 hover:bg-secondary-container/30 transition-colors group" data-category="clothing">
+<div class="flex items-center gap-3 min-w-0">
+<input class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface font-semibold">Gore-Tex Packable Rain Shell (Arc'teryx Beta)</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-secondary-fixed text-on-secondary-fixed font-medium px-1.5 py-0.2 rounded">Weather Advisory</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">luggage</span> Cabin Bag
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface font-medium">Assigned: Alex</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.32 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="documents">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Physical Passports & Japan Visit Web QR</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-tertiary-fixed text-on-tertiary-fixed font-medium px-1.5 py-0.2 rounded">Verified</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">folder_shared</span> Leather Travel Folio
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">Non-negotiable</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.12 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 6: Yen Cash Envelope -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="documents">
+<div class="flex items-center gap-3 min-w-0">
+<input class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface font-semibold">Japanese Yen Cash Envelope (¥50,000 reserve)</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-primary/10 text-primary font-medium px-1.5 py-0.2 rounded">Cash Only Stalls</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">payments</span> Inner Security Pouch
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">High Priority</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.05 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="tech">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Leica M6 Body + 35mm Summicron-M + 5x Portra 400</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">Hand-Check Lead Bag</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">photo_camera</span> Billingham Hadley
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface">Alex</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">1.12 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="tech">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Sony WH-1000XM5 ANC Headphones</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">In Transit</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">headphones</span> Personal Carry
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface">Flight 108</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.25 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 9 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="clothing">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Extra Fine Merino Wool Crewneck (Oatmeal)</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">Compression Cube 1</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">workspaces</span> Checked Duffel
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface">Alex</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.31 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 10 -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="toiletries">
+<div class="flex items-center gap-3 min-w-0">
+<input checked="" class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface line-through text-on-surface-variant font-medium">Aēsop Resurrection Rinse-Free Hand Mist & Lip Balm</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">TSA 100ml</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">sanitizer</span> Clear Toiletry Pouch
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.14 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 11: Unchecked Eyewear -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="gear">
+<div class="flex items-center gap-3 min-w-0">
+<input class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface font-medium">Polarized Tortoiseshell Sunglasses + Hard Leather Case</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">visibility</span> Daypack
+                  </span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface">Alex</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.11 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Item 12: Unchecked Medical -->
+<div class="checklist-item px-space-base py-3 flex items-center justify-between gap-3 hover:bg-surface-container-low/60 transition-colors group" data-category="toiletries">
+<div class="flex items-center gap-3 min-w-0">
+<input class="pack-checkbox h-4 w-4 rounded accent-primary border-outline cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="item-title font-body-lg text-body-lg text-on-surface font-medium">Blister Bandages (Compeed) & Electrolyte Tablets</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-1.5 py-0.2 rounded text-on-surface-variant">Tokyo Walking 20k steps/day</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">medication</span> First Aid Pouch
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">0.09 kg</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-on-surface p-1 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inline Quick Add Row -->
+<div class="p-space-base bg-surface-container-low/40 border-t border-outline-variant/20 flex items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-ui text-label-ui">
+<span class="material-symbols-outlined text-[16px]">tips_and_updates</span>
+<span>Tip: Drag to reassign items between Carry-on and Checked bags</span>
+</div>
+<button class="font-label-ui text-label-ui text-primary hover:text-primary-container font-semibold flex items-center gap-1">
+<span>Show all completed (18)</span>
+<span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Flatlay Visual Context Banner (Matching Provided Aesthetic) -->
+<div class="relative rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 bg-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-12 items-center">
+<div class="md:col-span-7 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-primary uppercase font-semibold">
+<span>Tactile EDC Specimen</span>
+<span>•</span>
+<span>Verified Flatlay</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Carry-On Essentials Staging</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+                All high-value optical components, lithium battery banks (<100Wh), and international passports staged in unbleached cotton pouches prior to Rimowa case induction.
+              </p>
+</div>
+<div class="flex flex-wrap items-center gap-3 mt-4 pt-3 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Leica M6 (0.84x)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Sony WH-1000XM5</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Aesop Aromatique</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 h-48 md:h-64 relative">
+<img alt="Tokyo Spring Trip EDC Flatlay with passport, leica, headphones, linen shirt and power bank" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjQBD9EzgKPErma5UT9UvxITcfJi-wwFNaqe9nr4XRTFQ7xVcE5yG-vtTwx9xn6_yC_6viAmSC3VamhU29Pk8q5FYHFZ4bAC4m_7sghgXVkCkv4W6AggJ9cdoGL0_U-7zFyr1KNdViPtBCH_B0flRE7_N0ptCpIKzVZ632ZvCiDMPkbbxRmrx4pqx6lnxhpTxrRZ50JscmHvVz5JZtaSjbJuOABz1GvXAs_4kQocDiaT-7YLadN9vG"/>
+<div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-surface-container via-transparent to-transparent opacity-40"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Inspector & Preparation Logistics Drawer -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Luggage Allocation Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-space-base shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-outline-variant/15 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">luggage</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Luggage Allocation</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">2 Containers</span>
+</div>
+<!-- Cabin Luggage Breakdown -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/15 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">flight_takeoff</span>
+<span class="font-label-ui text-label-ui font-semibold text-on-surface">Rimowa Cabin (55cm)</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold">6.8 / 10.0 kg</span>
+</div>
+<!-- Mini Category Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 45%" title="Tech & Optics: 45%"></div>
+<div class="bg-secondary h-full" style="width: 30%" title="Clothing: 30%"></div>
+<div class="bg-tertiary h-full" style="width: 15%" title="Toiletries: 15%"></div>
+<div class="bg-surface-dim h-full" style="width: 10%" title="Other: 10%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Tech 3.1kg
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Wear 2.0kg
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Misc 1.7kg
+            </span>
+</div>
+</div>
+<!-- Checked Luggage Breakdown -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/15 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">inventory</span>
+<span class="font-label-ui text-label-ui font-semibold text-on-surface">Nomatic 30L Travel Duffel</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-semibold">14.2 / 23.0 kg</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 65%" title="Garments & Shoes: 65%"></div>
+<div class="bg-tertiary h-full" style="width: 20%" title="Care & Liquids: 20%"></div>
+<div class="bg-primary h-full" style="width: 15%" title="Souvenir Reserve: 15%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Footwear & Warmth
+            </span>
+<span class="text-tertiary font-medium">8.8 kg Souvenir Buffer</span>
+</div>
+</div>
+</div>
+<!-- Power, Grid & Voltage Specifications for Japan -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-space-base shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-outline-variant/15 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Destination Power Specs</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold">JIS C 8303</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center">
+<div class="p-2.5 rounded bg-surface-container-low border border-outline-variant/15">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">Grid Voltage</span>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface mt-0.5">100 V</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">50Hz East / 60Hz West</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low border border-outline-variant/15">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">Plug Standard</span>
+<div class="font-headline-md text-headline-md font-semibold text-primary mt-0.5">Type A & B</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">2-Prong Flat Blades</span>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-high/60 border border-outline-variant/15 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 shrink-0">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<strong>No step-down converter needed:</strong> MacBook 96W, Anker 65W GaN, and iPhone chargers support 100V–240V auto-switching. Ground pin adapters required for 3-prong cables.
+          </p>
+</div>
+</div>
+<!-- Departure Countdown Checklist (T-minus 18 Days) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-space-base shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-outline-variant/15 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">alarm</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pre-Departure Milestones</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-primary/10 text-primary font-semibold">T-18 Days</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Task 1 -->
+<div class="flex items-start gap-2.5 p-2 rounded hover:bg-surface-container-low transition-colors">
+<input checked="" class="h-4 w-4 rounded accent-primary mt-0.5 shrink-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface line-through text-on-surface-variant font-medium">Ubigi Japan eSIM Profile Downloaded</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">10GB 5G High-Speed activated on IMEI 2</span>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="flex items-start gap-2.5 p-2 rounded hover:bg-surface-container-low transition-colors">
+<input checked="" class="h-4 w-4 rounded accent-primary mt-0.5 shrink-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface line-through text-on-surface-variant font-medium">Credit Card Travel Notices (Chase / Amex)</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Zero Foreign Transaction Fee flags active</span>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="flex items-start gap-2.5 p-2 rounded hover:bg-surface-container-low transition-colors">
+<input class="h-4 w-4 rounded accent-primary mt-0.5 shrink-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Print JR Pass Physical Exchange Vouchers</span>
+<span class="font-label-mono-sm text-label-mono-sm text-error">Collect original voucher from courier package</span>
+</div>
+</div>
+<!-- Task 4 -->
+<div class="flex items-start gap-2.5 p-2 rounded hover:bg-surface-container-low transition-colors">
+<input class="h-4 w-4 rounded accent-primary mt-0.5 shrink-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Suica / Pasmo IC Card into Apple Wallet</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Requires Mastercard or AMEX for reload</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Utilities -->
+<div class="p-space-base rounded-xl bg-surface-container-high/40 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">print</span>
+<span class="font-label-ui text-label-ui text-on-surface font-medium">Print Waterproof Luggage Tags</span>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container border border-outline-variant/30 text-on-surface font-label-mono-sm text-label-mono-sm transition-colors">
+          PDF Export
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Engine -->
+<script>
+    (function initSmartPacking() {
+      const checkboxes = document.querySelectorAll('.pack-checkbox');
+      const counterEl = document.getElementById('stat-count');
+      const percentEl = document.getElementById('stat-percent');
+      const barEl = document.getElementById('stat-bar');
+      const tabCounter = document.getElementById('tab-counter');
+      const catAllBadge = document.getElementById('cat-all-badge');
+
+      function recalculateMetrics() {
+        const total = checkboxes.length;
+        let checkedCount = 0;
+
+        checkboxes.forEach(cb => {
+          const row = cb.closest('.checklist-item');
+          const title = row ? row.querySelector('.item-title') : null;
+          if (cb.checked) {
+            checkedCount++;
+            if (title) {
+              title.classList.add('line-through', 'text-on-surface-variant');
+              title.classList.remove('font-semibold');
+            }
+          } else {
+            if (title) {
+              title.classList.remove('line-through', 'text-on-surface-variant');
+              title.classList.add('font-semibold');
+            }
+          }
+        });
+
+        const percent = Math.round((checkedCount / total) * 100);
+        if (counterEl) counterEl.textContent = checkedCount;
+        if (percentEl) percentEl.textContent = percent + '%';
+        if (barEl) barEl.style.width = percent + '%';
+        if (tabCounter) tabCounter.textContent = `${checkedCount}/${total}`;
+        if (catAllBadge) catAllBadge.textContent = `${checkedCount}/${total}`;
+      }
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', recalculateMetrics);
+      });
+
+      // Category Pill Filtering
+      const pills = document.querySelectorAll('.cat-pill');
+      const items = document.querySelectorAll('.checklist-item');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => {
+            p.classList.remove('bg-surface-container-high', 'text-on-surface');
+            p.classList.add('text-on-surface-variant', 'border-transparent');
+          });
+          pill.classList.add('bg-surface-container-high', 'text-on-surface');
+          pill.classList.remove('text-on-surface-variant', 'border-transparent');
+
+          const target = pill.getAttribute('data-cat');
+          items.forEach(item => {
+            if (target === 'all' || item.getAttribute('data-category') === target) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Simple Search within list
+      const searchInput = document.getElementById('checklist-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().trim();
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(val)) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Add Weather Recommendation Action
+      const recBtn = document.getElementById('add-weather-rec-btn');
+      if (recBtn) {
+        recBtn.addEventListener('click', () => {
+          recBtn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary">check</span> Applied to Cabin Bag`;
+          recBtn.classList.add('bg-tertiary-fixed/30', 'text-on-tertiary-fixed');
+          setTimeout(() => {
+            recBtn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span> Apply Advisory Items`;
+            recBtn.classList.remove('bg-tertiary-fixed/30', 'text-on-tertiary-fixed');
+          }, 2400);
+        });
+      }
+
+      // ⌘P Keyboard Shortcut Hook
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'p') {
+          e.preventDefault();
+          const addBtn = document.getElementById('add-item-btn');
+          if (addBtn) addBtn.click();
+        }
+      });
+
+      recalculateMetrics();
+    })();
+  </script>
+</div></main></div></body></html>

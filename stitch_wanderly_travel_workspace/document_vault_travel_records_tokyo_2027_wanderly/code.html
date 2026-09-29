@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb4a2","on-background":"#1c1b1a","on-surface":"#1c1b1a","secondary-container":"#c9e3f7","on-error":"#ffffff","secondary":"#486172","on-secondary-fixed-variant":"#314a5a","secondary-fixed-dim":"#b0cadd","tertiary-container":"#64796e","surface-container-high":"#ece7e5","inverse-primary":"#ffb4a2","on-secondary-fixed":"#011e2d","on-tertiary":"#ffffff","surface-tint":"#a04028","inverse-surface":"#31302f","on-tertiary-fixed":"#0b1f17","on-primary-fixed":"#3c0700","primary-container":"#bd553b","surface-container-low":"#f7f3f0","background":"#fdf8f6","on-surface-variant":"#56423d","inverse-on-surface":"#f4f0ee","error":"#ba1a1a","on-primary-fixed-variant":"#802913","surface-bright":"#fdf8f6","surface-variant":"#e6e2df","surface-container":"#f2edeb","on-tertiary-container":"#f5fff7","surface-container-highest":"#e6e2df","on-error-container":"#93000a","tertiary-fixed":"#d1e8da","on-primary-container":"#fffbff","on-secondary":"#ffffff","on-primary":"#ffffff","outline-variant":"#ddc0ba","on-secondary-container":"#4d6677","surface-dim":"#ddd9d7","surface-container-lowest":"#ffffff","tertiary":"#4c6156","secondary-fixed":"#cce6fa","on-tertiary-fixed-variant":"#374b41","error-container":"#ffdad6","outline":"#8a726c","surface":"#fdf8f6","tertiary-fixed-dim":"#b5ccbf","primary":"#9d3d26","primary-fixed":"#ffdad2"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"48px","margin-mobile":"16px","space-sm":"8px","margin-desktop":"24px","space-lg":"24px","gutter-mobile":"12px","space-base":"16px","space-xl":"32px","space-xs":"4px","gutter-desktop":"16px","space-md":"12px","space-2xs":"2px"},fontFamily:{"headline-lg-mobile":["Geist"],"label-ui":["Geist"],"headline-lg":["Geist"],"display-hero-mobile":["Geist"],"label-mono-md":["JetBrains Mono"],"display-hero":["Geist"],"body-sm":["Geist"],"label-mono-sm":["JetBrains Mono"],"body-lg":["Geist"],"headline-sm":["Geist"],"body-md":["Geist"],"headline-md":["Geist"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero-mobile":["34px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-mono-md":["12px",{"lineHeight":"16px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-hero":["48px",{"lineHeight":"52px","letterSpacing":"-0.035em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-low border-r border-surface-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="p-space-base border-b border-surface-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-semibold"><span class="material-symbols-outlined text-[18px]">explore</span></div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Wanderly</span><span class="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-on-surface">Personal & Trips <span class="material-symbols-outlined text-[14px]">unfold_more</span></span></div></div></div><div class="p-space-base pb-space-xs"><div class="flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest border border-surface-variant rounded text-on-surface-variant hover:border-outline transition-all cursor-pointer"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Search...</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant">⌘K</span></div></div><nav class="flex flex-col gap-0.5 px-space-sm pt-space-xs" data-active-classes="bg-surface-container-highest text-on-surface font-medium"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded transition-colors bg-surface-container-highest text-on-surface font-medium" data-path="trips" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span class="font-body-md text-body-md">My Trips</span></div><span class="font-label-mono-sm text-label-mono-sm bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full">3 active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="calendar" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-body-md text-body-md">Calendar</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="places" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">pin_drop</span><span class="font-body-md text-body-md">Places</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="packing" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md text-body-md">Packing</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">18/24</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="expenses" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Expenses</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-body-md text-body-md">Documents</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">6</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md">Settings</span></div></a></nav></div><div class="p-space-sm border-t border-surface-variant flex flex-col gap-space-sm"><button class="w-full flex items-center justify-center gap-1.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded font-label-ui text-label-ui font-medium transition-colors"><span class="material-symbols-outlined text-[16px]">add</span> New Trip</button><div class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-ui text-label-ui font-semibold">AC</div><div class="flex flex-col leading-tight"><span class="font-label-ui text-label-ui font-medium text-on-surface">Alex Chen</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate max-w-[110px]">alex.chen@craft.co</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">more_vert</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface/80 backdrop-blur-xl border-b border-surface-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Trips</span><span>/</span><span class="text-on-surface font-medium">Spring 2027</span></div><div class="h-3.5 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container border border-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-label-ui text-label-ui font-medium text-on-surface">Tokyo Spring 2027</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span><span>Synced</span></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface border border-surface-variant font-label-ui text-label-ui text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[15px]">share</span> Share</button><button class="w-7 h-7 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-variant ml-1" src="https://lh3.googleusercontent.com/aida/AEtjO1XOHhz56DJBiG2uDemeatmaaRCVb3L64Vgas6UyTxxRJs2Ly2DLMdNC-71xfYekqS644BipYr5h0J5LOVhEiFcqexF-Up_ltf1V3e4W446uFcEJKZ_b0DM1AFmqRqH4JFrvABlapA182UtPnEJLJoH9u29uKhg3TmxiNPj8FJRhlmt_dS6xrGQIet3x_Qfp9gPnxz-qJmx63VGOMJRAHJ8SlFAtKkWLX8TWTCMJ2a9FoavhpU-Wv1Nv7A"/></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Command & Action Bar -->
+<div class="px-space-lg pt-space-md pb-space-sm flex flex-col gap-space-md">
+<!-- Breadcrumb + Security State Indicator -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="hover:text-on-surface cursor-pointer">Trips</span>
+<span>/</span>
+<span class="hover:text-on-surface cursor-pointer">Global Vault</span>
+<span>/</span>
+<span class="text-on-surface font-medium">Travel Documents & Credentials</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>256-bit AES Encrypted</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-colors font-label-ui text-label-ui">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">shield_with_heart</span>
+          Security Audit
+        </button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-colors font-label-ui text-label-ui">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">file_download</span>
+          Export All Records
+        </button>
+<button class="flex items-center gap-1.5 px-3.5 py-1 rounded bg-primary text-on-primary shadow hover:bg-primary-container transition-all font-label-ui text-label-ui font-medium">
+<span class="material-symbols-outlined text-[16px]">cloud_upload</span>
+<span>+ Upload Document</span>
+<span class="ml-1 bg-on-primary/20 px-1 py-0.2 rounded font-label-mono-sm text-label-mono-sm text-on-primary">⌘U</span>
+</button>
+</div>
+</div>
+<!-- Title & Editorial Description -->
+<div class="flex flex-col gap-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Travel Documents & Secure Vault</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        End-to-end encrypted storage for passports, e-visas, transit vouchers, hotel folios, and medical insurance policies with automated OCR attribute extraction and offline pass generation.
+      </p>
+</div>
+</div>
+<!-- Summary Metrics Strip (4 key cards) -->
+<div class="px-space-lg py-space-xs">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-on-surface-variant">Total Vault Files</span>
+<span class="font-display-hero text-headline-lg font-semibold text-on-surface mt-1">24</span>
+</div>
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Across 3 active itineraries</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-on-surface">48.2 MB Total</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-on-surface-variant">Verified & Active</span>
+<span class="font-display-hero text-headline-lg font-semibold text-on-surface mt-1">21</span>
+</div>
+<div class="w-9 h-9 rounded bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1 text-tertiary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Biometrics & PNR Valid
+          </span>
+<span>87.5% ratio</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-primary">Expiring & Attention</span>
+<span class="font-display-hero text-headline-lg font-semibold text-primary mt-1">2</span>
+</div>
+<div class="w-9 h-9 rounded bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">notification_important</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex flex-col gap-0.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="text-primary truncate">JR Pass voucher: 18 days left</span>
+<span class="truncate">Int'l Driving Permit: 45 days</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-on-surface-variant">Readiness: Tokyo 2027</span>
+<span class="font-display-hero text-headline-lg font-semibold text-on-surface mt-1">5 / 6</span>
+</div>
+<div class="w-9 h-9 rounded bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">checklist_rtl</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary h-full rounded-full" style="width: 83.3%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="text-on-primary-fixed-variant truncate">Pending: Return Boarding Pass</span>
+<span class="font-medium text-on-surface">83%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trip Document Readiness Selector & Category Filters -->
+<div class="px-space-lg pt-space-base flex flex-col gap-space-sm">
+<!-- Itinerary Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-ui text-label-ui font-medium shadow-sm shrink-0">
+        All Documents (24)
+      </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui transition-colors shadow-sm shrink-0 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+        Tokyo Spring 2027
+        <span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface">6/6</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui transition-colors shadow-sm shrink-0 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Kyoto & Osaka Tour
+        <span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface">4/7</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui transition-colors shadow-sm shrink-0 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+        Swiss Alps Trek
+        <span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface">8/9</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui transition-colors shadow-sm shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+        Global Identity Vault
+        <span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface">6</span>
+</button>
+</div>
+<!-- Category Filter Row -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider pr-1">Category:</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-ui text-label-ui font-medium cursor-pointer">All (24)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Passports & ID (4)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Flights & Transit (6)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Hotel Confirmations (5)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Travel Insurance (3)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Tickets & Passes (4)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-ui text-label-ui cursor-pointer transition-colors">Health & Vaccines (2)</span>
+</div>
+</div>
+<!-- Main Split Workspace (65% Left Feed / 35% Right Inspector) -->
+<div class="px-space-lg py-space-base">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT WORKSPACE: Search, Filter, Document Cards & Upload Dropzone (8 cols on lg) -->
+<div class="lg:col-span-8 flex flex-col gap-space-base">
+<!-- Search & Control Header -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-8 pr-12 py-1.5 rounded bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Filter by name, traveler, PNR code, or issuer... (⌘F)" type="text"/>
+<span class="absolute right-2 top-2 font-label-mono-sm text-label-mono-sm bg-surface-container px-1 py-0.2 rounded text-on-surface-variant">⌘F</span>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<!-- Status Dropdown Simulation -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface-container-low text-on-surface-variant font-label-ui text-label-ui cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Status: All Active</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<!-- Traveler Filter -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface-container-low text-on-surface-variant font-label-ui text-label-ui cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>Travelers: All (2)</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest mx-0.5"></div>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" title="Grid View">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container text-on-surface" title="List View">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+</div>
+</div>
+<!-- Dropzone Banner Area -->
+<div class="p-space-base rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-base relative overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-base">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Drop travel credentials or PDFs here</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Automatic optical OCR parses Japanese Visas, flight confirmations, e-tickets, and hotel folios up to 25MB.</span>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-lowest text-on-surface-variant px-2.5 py-1 rounded shadow-sm">PDF, PNG, JPG, PKPASS</span>
+<button class="px-3 py-1.5 bg-primary text-on-primary rounded font-label-ui text-label-ui font-medium hover:bg-primary-container shadow transition-colors">
+              Browse
+            </button>
+</div>
+</div>
+<!-- Document High-Density Feed -->
+<div class="flex flex-col gap-space-xs">
+<!-- ITEM 1: Active Selected Card -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Japan Electronic Visa & Visit Japan Web QR</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-mono-sm text-label-mono-sm font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active Verified
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Tokyo 2027</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Ministry of Foreign Affairs of Japan · Tourist Visa 90-day Single Entry · Application Ref #JP-294021
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span class="flex items-center gap-1.5">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Alex Chen portrait minimal high-contrast monochrome avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqhNRiFKP_aXELg0TDfWzsk0W5ZAsAak8AYY5kEmTVhimT3iggbo3bXSMJ0hheTgDBL2AHkkCs_hNst0z-Dv8iI82do6phf6OMIBYXyQIy9xh8w5MnqrV6uI32Zr-bkkzQ1kL7eZ3uekOlNWGm-m8GHQv1gVGFns0sDV91y4wIKKXug5kHAleIB9io0j7778s5PKXC0v3Y6UkmiyVVAlHX9aSAYr8QtqsFZFu8Vb5X7ewcCSThkcKt"/>
+<span>Alex Chen</span>
+</span>
+<span>•</span>
+<span>Uploaded Mar 28, 2027</span>
+<span>•</span>
+<span class="text-tertiary font-medium">Valid until Jul 15, 2027</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">lock</span> Private Vault
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded bg-primary text-on-primary shadow transition-all hover:bg-primary-container" title="Selected Document">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ITEM 2: United Airlines UA875 -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">flight</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">United Airlines Flight UA875 E-Ticket & PNR</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm font-medium">
+                      Confirmed PNR
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Tokyo 2027</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    SFO → HND (Boeing 777-300ER) · Seats 14A, 14B · Booking Ref #UA-892401 · 11h 15m nonstop
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span class="flex items-center gap-1.5">
+<div class="flex -space-x-1.5">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest text-[9px] flex items-center justify-center font-bold">AC</div>
+<div class="w-4 h-4 rounded-full bg-primary-fixed text-primary text-[9px] flex items-center justify-center font-bold">ML</div>
+</div>
+<span>Alex Chen + Maya Lin</span>
+</span>
+<span>•</span>
+<span>Flight Date: Apr 28, 2027</span>
+<span>•</span>
+<span>Terminal 1, San Francisco</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Inspect">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ITEM 3: JR Pass Physical Voucher (WARNING ACTION REQ) -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">confirmation_number</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Japan Rail All-Island 7-Day Physical Pass Voucher</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-mono-sm text-label-mono-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">alarm</span> Exchange within 18 days
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Tokyo 2027</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    MCO Exchange Order #JR-883910 · Present physical paper booklet at JR East Travel Center Narita T1
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span>Holder: Alex Chen</span>
+<span>•</span>
+<span class="text-primary font-medium">Exchange Deadline: Apr 19, 2027</span>
+<span>•</span>
+<span>Paper Tracking: Fedex #7829-0192</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Voucher">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Inspect">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ITEM 4: Hotel Sunroute Plaza Shinjuku -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">hotel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Hotel Sunroute Plaza Shinjuku Booking Voucher</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-mono-sm text-label-mono-sm font-medium">
+                      Active Confirmed
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Tokyo 2027</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Agoda Confirmation #AGD-91823 · Standard Double Non-Smoking · 6 Nights Base Stay · Check-in 15:00
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span>Stay: Apr 28 - May 4, 2027</span>
+<span>•</span>
+<span>Prepaid: ¥142,800</span>
+<span>•</span>
+<span>Free cancellation until Apr 24</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Voucher">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Inspect">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ITEM 5: Allianz Global Travel Protection Plan -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Allianz Global Travel Protection Plan</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-label-mono-sm font-medium">
+                      Policy Active
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Tokyo 2027</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Comprehensive Medical ($1M) & Emergency Evacuation · Policy #ALZ-771920 · 24/7 International Hotline Included
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span>Covered: Alex Chen, Maya Lin</span>
+<span>•</span>
+<span>Effective: Apr 26 - May 10, 2027</span>
+<span>•</span>
+<span>Assistance: +1 (804) 281-5700</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Inspect">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ITEM 6: Alex Chen - US Biometric Passport -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-base">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-fixed-dim flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">contact_page</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Alex Chen - US Biometric Passport</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-mono-sm text-label-mono-sm font-medium">
+                      Expires in 3 yrs
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Global Identity Vault</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Passport Book No: *****4921 · Authority: United States Department of State · RFID Chip Certified
+                  </span>
+<div class="flex items-center gap-space-base mt-2.5 text-on-surface-variant font-label-mono-sm text-label-mono-sm flex-wrap">
+<span>Holder: Alex Chen</span>
+<span>•</span>
+<span>DOB: Oct 14, 1993</span>
+<span>•</span>
+<span class="text-tertiary font-medium">Valid until Apr 12, 2030</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-center shrink-0">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Share with traveler">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Inspect">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Sub-Banner: Travel Document Hygiene Tip -->
+<div class="p-space-base rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">lightbulb</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Airline Rule Notice:</strong> Most international carriers require passport validity for at least 6 months beyond intended departure. Wanderly checks all destinations automatically against IATA Timatic standards.
+            </span>
+</div>
+<button class="shrink-0 font-label-ui text-label-ui text-primary font-medium hover:underline">View Rules</button>
+</div>
+</div>
+<!-- RIGHT WORKSPACE: Active Selected Document Inspector (4 cols on lg) -->
+<div class="lg:col-span-4 flex flex-col gap-space-base sticky top-20">
+<!-- Inspector Card Container -->
+<div class="rounded-xl bg-surface-container-lowest shadow-md overflow-hidden flex flex-col">
+<!-- Inspector Header -->
+<div class="p-space-base bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">dock</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Document Inspector</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-mono-sm text-label-mono-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded font-medium">LIVE PREVIEW</span>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Document Visual Preview Ticket/Card -->
+<div class="p-space-base flex flex-col gap-space-base">
+<div class="w-full rounded-lg bg-surface-container-lowest shadow-sm p-4 relative overflow-hidden">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">public</span>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-semibold text-on-surface uppercase tracking-wide">JAPAN EVISA</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">IMMIGRATION SERVICES AGENCY</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface font-semibold">
+                  SINGLE 90D
+                </span>
+</div>
+<!-- Main Pass Visual Details -->
+<div class="py-3 grid grid-cols-2 gap-2 text-left">
+<div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant uppercase">Traveler Name</span>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">CHEN / ALEX</p>
+</div>
+<div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant uppercase">Nationality</span>
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface">USA</p>
+</div>
+<div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant uppercase">Issue Date</span>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">15 MAR 2027</p>
+</div>
+<div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant uppercase">Must Enter By</span>
+<p class="font-body-sm text-body-sm font-semibold text-primary">15 JUL 2027</p>
+</div>
+</div>
+<!-- Barcode & QR Code Section -->
+<div class="pt-3 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<!-- Simulated 2D Barcode Stripes -->
+<div class="flex gap-0.5 h-7 items-center opacity-85">
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1.5 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-2 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-2 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-1.5 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-2.5 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-2 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1.5 h-full bg-on-surface"></div>
+</div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">JP-EVSA-883-92019-XAC</span>
+</div>
+<!-- QR Code Block -->
+<div class="w-12 h-12 rounded bg-surface-container-lowest p-1 flex items-center justify-center shadow-sm">
+<svg class="w-10 h-10 text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h2v4h-2v-4zm-4-4h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 2h4v2h-4v-2zm-4-2h2v2h-2v-2zm6-4h2v2h-2v-2z"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Quick Action Toolbar -->
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 bg-primary text-on-primary rounded font-label-ui text-label-ui font-medium hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+                Download PDF (1.4 MB)
+              </button>
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 bg-surface-container-low text-on-surface rounded font-label-ui text-label-ui hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">print</span>
+                Print Offline Copy
+              </button>
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 bg-surface-container-low text-on-surface rounded font-label-ui text-label-ui hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+                Fullscreen
+              </button>
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 bg-surface-container-low text-on-surface rounded font-label-ui text-label-ui hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+                Replace File
+              </button>
+</div>
+<!-- Metadata & Verification Details -->
+<div class="flex flex-col gap-2.5 pt-2">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-on-surface-variant font-semibold">Document Specifications</span>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Document Type</span>
+<span class="font-medium text-on-surface">Electronic Tourist Visa (90D)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Issuing Authority</span>
+<span class="font-medium text-on-surface">Embassy of Japan / MOFA</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Associated Trip</span>
+<span class="font-medium text-primary flex items-center gap-1">
+                  Tokyo Spring 2027
+                  <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Security Clearance</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-medium">End-to-End Encrypted</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Access Permissions</span>
+<span class="text-on-surface font-label-mono-sm text-label-mono-sm">Alex Chen (Owner), Maya Lin (View)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm py-1">
+<span class="text-on-surface-variant">Offline Mobile Sync</span>
+<span class="text-tertiary flex items-center gap-1 font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Cached in App
+                </span>
+</div>
+</div>
+<!-- Interactive Expiration & Push Notification Rule -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui font-medium text-on-surface">Expiration Reminder</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">Notify 7 days prior to expiry</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Audit Trail Log -->
+<div class="flex flex-col gap-1 pt-1">
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Security Audit Trail</span>
+<div class="p-2.5 rounded bg-surface-container-low font-label-mono-sm text-[11px] text-on-surface-variant flex flex-col gap-1 leading-relaxed">
+<div>• Uploaded by Alex Chen on Mar 28, 2027 at 14:22 PST</div>
+<div>• Auto-verified via Visit Japan Web API on Mar 29, 2027</div>
+<div>• SHA-256: 8f4b13a...902de1 (Integrity intact)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Destination Cultural Document Advisory Card -->
+<div class="p-space-base rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Japan Entry Guidance</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Starting 2027, Japan combines Customs & Immigration into a single consolidated QR code on Visit Japan Web. Keep this offline screenshot readily available upon touchdown at Narita/Haneda.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">Rule verified 2 hrs ago</span>
+<a class="font-label-ui text-label-ui text-primary hover:underline font-medium" href="#">Read Entry Protocol</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script to handle row selection / micro-interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Allow clicking table cards to highlight visually
+      const cards = document.querySelectorAll('.grid-cols-1.lg\\:grid-cols-12 .lg\\:col-span-8 .flex-col > div');
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (!e.target.closest('button') && !e.target.closest('input')) {
+            cards.forEach(c => {
+              const border = c.querySelector('.bg-primary.w-1');
+              if (border) border.remove();
+              c.classList.remove('shadow-md');
+              c.classList.add('shadow-sm');
+            });
+            
+            // Add subtle active accent
+            const indicator = document.createElement('div');
+            indicator.className = 'absolute left-0 top-0 bottom-0 w-1 bg-primary';
+            card.classList.add('relative', 'overflow-hidden', 'shadow-md');
+            card.classList.remove('shadow-sm');
+            card.prepend(indicator);
+          }
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>

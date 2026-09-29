@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb4a2","on-background":"#1c1b1a","on-surface":"#1c1b1a","secondary-container":"#c9e3f7","on-error":"#ffffff","secondary":"#486172","on-secondary-fixed-variant":"#314a5a","secondary-fixed-dim":"#b0cadd","tertiary-container":"#64796e","surface-container-high":"#ece7e5","inverse-primary":"#ffb4a2","on-secondary-fixed":"#011e2d","on-tertiary":"#ffffff","surface-tint":"#a04028","inverse-surface":"#31302f","on-tertiary-fixed":"#0b1f17","on-primary-fixed":"#3c0700","primary-container":"#bd553b","surface-container-low":"#f7f3f0","background":"#fdf8f6","on-surface-variant":"#56423d","inverse-on-surface":"#f4f0ee","error":"#ba1a1a","on-primary-fixed-variant":"#802913","surface-bright":"#fdf8f6","surface-variant":"#e6e2df","surface-container":"#f2edeb","on-tertiary-container":"#f5fff7","surface-container-highest":"#e6e2df","on-error-container":"#93000a","tertiary-fixed":"#d1e8da","on-primary-container":"#fffbff","on-secondary":"#ffffff","on-primary":"#ffffff","outline-variant":"#ddc0ba","on-secondary-container":"#4d6677","surface-dim":"#ddd9d7","surface-container-lowest":"#ffffff","tertiary":"#4c6156","secondary-fixed":"#cce6fa","on-tertiary-fixed-variant":"#374b41","error-container":"#ffdad6","outline":"#8a726c","surface":"#fdf8f6","tertiary-fixed-dim":"#b5ccbf","primary":"#9d3d26","primary-fixed":"#ffdad2"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"48px","margin-mobile":"16px","space-sm":"8px","margin-desktop":"24px","space-lg":"24px","gutter-mobile":"12px","space-base":"16px","space-xl":"32px","space-xs":"4px","gutter-desktop":"16px","space-md":"12px","space-2xs":"2px"},fontFamily:{"headline-lg-mobile":["Geist"],"label-ui":["Geist"],"headline-lg":["Geist"],"display-hero-mobile":["Geist"],"label-mono-md":["JetBrains Mono"],"display-hero":["Geist"],"body-sm":["Geist"],"label-mono-sm":["JetBrains Mono"],"body-lg":["Geist"],"headline-sm":["Geist"],"body-md":["Geist"],"headline-md":["Geist"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero-mobile":["34px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-mono-md":["12px",{"lineHeight":"16px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-hero":["48px",{"lineHeight":"52px","letterSpacing":"-0.035em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-low border-r border-surface-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="p-space-base border-b border-surface-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-semibold"><span class="material-symbols-outlined text-[18px]">explore</span></div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">Wanderly</span><span class="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1 cursor-pointer hover:text-on-surface">Personal & Trips <span class="material-symbols-outlined text-[14px]">unfold_more</span></span></div></div></div><div class="p-space-base pb-space-xs"><div class="flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest border border-surface-variant rounded text-on-surface-variant hover:border-outline transition-all cursor-pointer"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Search...</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant">⌘K</span></div></div><nav class="flex flex-col gap-0.5 px-space-sm pt-space-xs" data-active-classes="bg-surface-container-highest text-on-surface font-medium"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded transition-colors bg-surface-container-highest text-on-surface font-medium" data-path="trips" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span class="font-body-md text-body-md">My Trips</span></div><span class="font-label-mono-sm text-label-mono-sm bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full">3 active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="calendar" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-body-md text-body-md">Calendar</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="places" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">pin_drop</span><span class="font-body-md text-body-md">Places</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="packing" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md text-body-md">Packing</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">18/24</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="expenses" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Expenses</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-body-md text-body-md">Documents</span></div><span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">6</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md">Settings</span></div></a></nav></div><div class="p-space-sm border-t border-surface-variant flex flex-col gap-space-sm"><button class="w-full flex items-center justify-center gap-1.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary rounded font-label-ui text-label-ui font-medium transition-colors"><span class="material-symbols-outlined text-[16px]">add</span> New Trip</button><div class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-ui text-label-ui font-semibold">AC</div><div class="flex flex-col leading-tight"><span class="font-label-ui text-label-ui font-medium text-on-surface">Alex Chen</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate max-w-[110px]">alex.chen@craft.co</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">more_vert</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface/80 backdrop-blur-xl border-b border-surface-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Trips</span><span>/</span><span class="text-on-surface font-medium">Spring 2027</span></div><div class="h-3.5 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container border border-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-label-ui text-label-ui font-medium text-on-surface">Tokyo Spring 2027</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span><span>Synced</span></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface border border-surface-variant font-label-ui text-label-ui text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[15px]">share</span> Share</button><button class="w-7 h-7 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-variant ml-1" src="https://lh3.googleusercontent.com/aida/AEtjO1XOHhz56DJBiG2uDemeatmaaRCVb3L64Vgas6UyTxxRJs2Ly2DLMdNC-71xfYekqS644BipYr5h0J5LOVhEiFcqexF-Up_ltf1V3e4W446uFcEJKZ_b0DM1AFmqRqH4JFrvABlapA182UtPnEJLJoH9u29uKhg3TmxiNPj8FJRhlmt_dS6xrGQIet3x_Qfp9gPnxz-qJmx63VGOMJRAHJ8SlFAtKkWLX8TWTCMJ2a9FoavhpU-Wv1Nv7A"/></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-navigation & Header Bar -->
+<header class="w-full bg-surface-container-low px-space-lg py-space-md">
+<div class="flex flex-col gap-space-sm max-w-7xl mx-auto w-full">
+<!-- Top Meta & Path -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<nav aria-label="Breadcrumbs" class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="hover:text-on-surface cursor-pointer">Trips</span>
+<span class="text-surface-dim">/</span>
+<span class="hover:text-on-surface cursor-pointer">Spring 2027</span>
+<span class="text-surface-dim">/</span>
+<span class="hover:text-on-surface cursor-pointer">Tokyo Spring 2027</span>
+<span class="text-surface-dim">/</span>
+<span class="text-primary font-medium">Places Explorer</span>
+</nav>
+<div class="h-3 w-px bg-surface-variant ml-1"></div>
+<div class="flex items-center -space-x-1.5 ml-2">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-mono-sm text-[9px] font-semibold" title="Alex Chen">AC</div>
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-mono-sm text-[9px] font-semibold" title="Maya Lin">ML</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface text-on-surface hover:bg-surface-container font-label-ui text-label-ui transition-colors">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">file_download</span>
+<span>Export</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface text-on-surface hover:bg-surface-container font-label-ui text-label-ui transition-colors">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">input</span>
+<span>Import Notion / Maps</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 bg-primary text-on-primary hover:bg-primary-container rounded font-label-ui text-label-ui font-medium transition-transform active:translate-y-0.5" id="add-place-trigger">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add Place</span>
+<kbd class="font-label-mono-sm text-[10px] bg-on-primary/20 px-1 py-0.2 rounded text-on-primary ml-1">⌘N</kbd>
+</button>
+</div>
+</div>
+<!-- Main Title & Context Counter Line -->
+<div class="flex flex-wrap items-baseline justify-between gap-4 mt-1">
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Saved Places & Curations</h1>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TYO · Spring 2027</span>
+</div>
+<div class="flex items-center gap-3 font-label-ui text-label-ui text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface font-medium">14</span> saved spots
+          </div>
+<span class="text-surface-dim">·</span>
+<div><span class="text-on-surface font-medium">4</span> scheduled</div>
+<span class="text-surface-dim">·</span>
+<div><span class="text-on-surface font-medium">6</span> visited</div>
+<span class="text-surface-dim">·</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+<span>Ginza, Shibuya, Minato, Koto</span>
+</div>
+</div>
+</div>
+<!-- Section Navigation Tabs -->
+<div class="flex items-center gap-1 mt-2 -mb-space-md overflow-x-auto">
+<a class="px-3 py-2 font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[15px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="px-3 py-2 font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[15px]">calendar_view_day</span>
+<span>Itinerary</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded text-on-surface-variant">9d</span>
+</a>
+<a class="px-3 py-2 font-label-ui text-label-ui text-primary font-medium bg-surface rounded-t flex items-center gap-1.5 shadow-sm" href="#">
+<span class="material-symbols-outlined text-[15px] text-primary">pin_drop</span>
+<span>Places</span>
+<span class="font-label-mono-sm text-[10px] bg-primary-fixed text-on-primary-fixed font-semibold px-1.5 rounded-full">14</span>
+</a>
+<a class="px-3 py-2 font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+<span>Packing</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">18/24</span>
+</a>
+<a class="px-3 py-2 font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[15px]">credit_card</span>
+<span>Expenses</span>
+</a>
+<a class="px-3 py-2 font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[15px]">description</span>
+<span>Documents</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded text-on-surface-variant">6</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Split Layout -->
+<main class="w-full max-w-7xl mx-auto px-space-lg py-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Curated Places Feed & Dynamic Filtering (60% ~ 7 cols) -->
+<section class="lg:col-span-7 flex flex-col gap-space-base">
+<!-- Filter Bar & Search Well -->
+<div class="bg-surface-container-low p-space-base rounded flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[17px]">search</span>
+<input class="w-full pl-9 pr-14 py-1.5 bg-surface text-on-surface font-body-md text-body-md rounded placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="filter-input" placeholder="Filter 14 saved spots by district, tags, or coffee..." type="text"/>
+<kbd class="absolute right-2 top-1/2 -translate-y-1/2 font-label-mono-sm text-[10px] bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant pointer-events-none">⌘F</kbd>
+</div>
+<button class="px-2.5 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-ui text-label-ui flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">tune</span>
+<span>View</span>
+</button>
+</div>
+<!-- Primary Category Chips -->
+<div class="flex items-center gap-1.5 flex-wrap pt-1 font-label-ui text-label-ui">
+<button class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-medium flex items-center gap-1 transition-colors">
+<span>All</span>
+<span class="font-label-mono-sm text-[10px] bg-on-primary/20 px-1 rounded-full">14</span>
+</button>
+<button class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span>Coffee & Bakeries</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded-full">3</span>
+</button>
+<button class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span>Restaurants</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded-full">4</span>
+</button>
+<button class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span>Architecture & Culture</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded-full">4</span>
+</button>
+<button class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span>Nature & Gardens</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded-full">2</span>
+</button>
+<button class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span>Retail & Stationery</span>
+<span class="font-label-mono-sm text-[10px] bg-surface-container px-1 rounded-full">1</span>
+</button>
+</div>
+<!-- Secondary Sub-Filters -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-1 border-t border-surface-variant/40">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 hover:text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[13px] text-tertiary">check_box</span> Scheduled (4)
+            </span>
+<span class="flex items-center gap-1 hover:text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[13px]">star</span> Starred Only
+            </span>
+<span class="flex items-center gap-1 hover:text-on-surface cursor-pointer">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Open Now
+            </span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span>Cost:</span>
+<button class="px-1 rounded hover:bg-surface hover:text-on-surface">¥</button>
+<button class="px-1 rounded bg-surface text-on-surface font-medium">¥¥</button>
+<button class="px-1 rounded hover:bg-surface hover:text-on-surface">¥¥¥</button>
+</div>
+</div>
+</div>
+<!-- Curated Place Cards Feed -->
+<div class="flex flex-col gap-space-md" id="places-list">
+<!-- Place Card 1: Koffee Mameya Kakeru (Matches prompt image 1 vibe) -->
+<article class="bg-surface-container-lowest rounded p-space-base shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col sm:flex-row gap-space-base items-start">
+<div class="w-full sm:w-44 h-36 rounded overflow-hidden relative flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Japanese barista pouring artisanal specialty pour over drip coffee with a slender gooseneck kettle at a pristine natural hinoki wood tasting bar in a serene minimalist Tokyo cafe interior, warm natural sunlight through glass facade, soft ambient steam rising, ceramic cups, high-precision aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF-eVl_z3oE3igXk1sC7RP85MJrT8W0JWRlAO4H22dIfNPo6lHfEvfctmstsQt4YxzAzqArPL1_LjXUNqbjx12Fs2kpzzPq6uzWGZHAgZRN9f6Hhdoxj_bSBGK7YFd0VXV1KHCTn13fObRN6YeEJBYJ-uM4vCqhGOAU9eUQhXn-caD1OkqsQJTNz9TpsmAzKcUiPAFYoFP0awF78a2WQ6l-csKHt8GK9iu99Zvw0DUZEEkEulmWYfC"/>
+<span class="absolute top-2 left-2 bg-on-background/80 text-surface backdrop-blur-sm font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded uppercase">Stop #01</span>
+<span class="absolute bottom-2 right-2 bg-surface/90 text-on-surface font-label-mono-sm text-[10px] px-1 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+              </span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Koffee Mameya Kakeru</h2>
+<span class="w-1.5 h-1.5 rounded-full bg-primary" title="Booked in day itinerary"></span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Koto City, Shirakawa · Specialty Counter & Roast Lab</p>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded hover:bg-surface-container-low transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="font-label-mono-sm text-[11px] bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">event_available</span> Day 2 · 08:30 AM
+                  </span>
+<span class="font-label-mono-sm text-[11px] bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded">Reservation Confirmed</span>
+<span class="font-label-mono-sm text-[11px] bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">¥¥¥ · Tasting Flight</span>
+<span class="font-label-mono-sm text-[11px] text-tertiary flex items-center gap-0.5 ml-auto">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary inline-block"></span> Open · Closes 18:30
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                  World-class multi-course Geisha extraction course with master baristas. Hinoki counter facing quiet neighborhood street. 12 rare micro-lots on rotation.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-surface-variant/40">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">directions_walk</span> Kiyosumi 6m</span>
+<span>·</span>
+<span class="text-on-surface">Curated by Alex</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-ui text-label-ui transition-colors">Notes (2)</button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded font-label-ui text-label-ui flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[13px]">navigation</span> Navigate
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Place Card 2: Nezu Museum & Secret Bamboo Garden (Matches prompt image 2 vibe) -->
+<article class="bg-surface-container-lowest rounded p-space-base shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col sm:flex-row gap-space-base items-start">
+<div class="w-full sm:w-44 h-36 rounded overflow-hidden relative flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Winding wet stone flagstone walkway snaking through an ancient, lush Japanese moss garden framed by towering green bamboo groves, stone toro lantern, overcast diffused tranquil light, traditional tearoom roofline tucked in foliage, calming deep greens and earthy slate textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACoyvgfynOw0YCsWmsiW4h0tkVqEiayvZJ0LLk-_4Wl2G4lYBMC5K7iZ5ZutzdEtL6_7s6xWIuY8Da4V0mdDVu96jaYEprA8xiawfnJZaHaFBaWhkok9AMoOmUUgalhZ2VCEe9DrwzT5Q4vLHI1myHVmJMO-TK6jzJV0KkCM3-fO-MfjFt5q9QVO-ZEsnM2OYQCj8WofrKXv9j6uLwLY1nymmwrC6T6haoxpFhdf84tk-B1XwI9LzU"/>
+<span class="absolute top-2 left-2 bg-on-background/80 text-surface backdrop-blur-sm font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded uppercase">Stop #04</span>
+<span class="absolute bottom-2 right-2 bg-surface/90 text-on-surface font-label-mono-sm text-[10px] px-1 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.8
+              </span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Nezu Museum & Garden</h2>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Minami-Aoyama, Minato · Kengo Kuma Architecture & Garden</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary p-1 rounded hover:bg-surface-container-low transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="font-label-mono-sm text-[11px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">pending</span> Draft for Day 4
+                  </span>
+<span class="font-label-mono-sm text-[11px] bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">¥1,400 Admission</span>
+<span class="font-label-mono-sm text-[11px] bg-secondary-container text-on-secondary-container px-1.5 py-0.5 rounded">Bamboo Corridor</span>
+<span class="font-label-mono-sm text-[11px] text-on-surface-variant flex items-center gap-0.5 ml-auto">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 10:00 - 17:00 (Mon Closed)
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                  Exquisite private pre-modern Japanese art collection inside Kengo Kuma pavilion opening out directly onto an expansive, sunken bamboo and irises moss garden.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-surface-variant/40">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">subway</span> Omotesando Exit A5 (8m)</span>
+<span>·</span>
+<span class="text-tertiary font-medium">Peaceful morning spot</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 bg-primary text-on-primary hover:bg-primary-container rounded font-label-ui text-label-ui transition-transform active:translate-y-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">add</span> Add to Day 4
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Place Card 3: Tsukiji Fish Market & Uogashi Shisho (Matches prompt image 3 vibe) -->
+<article class="bg-surface-container-lowest rounded p-space-base shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col sm:flex-row gap-space-base items-start">
+<div class="w-full sm:w-44 h-36 rounded overflow-hidden relative flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Narrow historic Tokyo morning street market alleyway with weathered wooden storefronts, kanji cloth noren banners, seafood crates, artisan chef stalls, bicycles parked along stone pavement, gentle morning haze catching wet asphalt, cinematic retro film grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAonWTEgZD2VMFEH5wbr3z1actpbuA-102MwVV50Sji5nzzV6YpnG6QBHpeOO2dj-SxJxfaEneX8mPR7iD3ibQyfM9ONKGQndt8ET-GpbPIbB_Wc_2RqbhUB-I5pGb6MmdUCgl-1FndTBGECZjw0SHSK-7kkuIzmK4iePJ_715z9Fjm1byYgVIcBNTzeAJ-Umm319SBP_S6a8llzblWdCN5cgiLcRfKfohic-qTYwfmtnA_o7iy6Qdw"/>
+<span class="absolute top-2 left-2 bg-on-background/80 text-surface backdrop-blur-sm font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded uppercase">Stop #03</span>
+<span class="absolute bottom-2 right-2 bg-surface/90 text-on-surface font-label-mono-sm text-[10px] px-1 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.7
+              </span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Tsukiji Outer Market & Uogashi</h2>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Chuo City · Traditional Street Food & Knife Guilds</p>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded hover:bg-surface-container-low transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="font-label-mono-sm text-[11px] bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">event_available</span> Day 3 · 07:30 AM
+                  </span>
+<span class="font-label-mono-sm text-[11px] bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded">Early Morning Window</span>
+<span class="font-label-mono-sm text-[11px] bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">¥¥ · Street Bites</span>
+<span class="font-label-mono-sm text-[11px] text-on-surface-variant flex items-center gap-0.5 ml-auto">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 06:00 - 14:00
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                  Freshly grilled tamagoyaki egg omelets, Hokkaido sea urchin (uni) nigiri, and traditional Japanese high-carbon knife sharpening workshops at Nenohi.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-surface-variant/40">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">subway</span> Tsukiji Station Exit 1</span>
+<span>·</span>
+<span>Assigned to Day 3 Morning</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-ui text-label-ui transition-colors">Edit Itinerary</button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded font-label-ui text-label-ui flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[13px]">navigation</span> Route
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Place Card 4: Shibuya Sky Observation Deck -->
+<article class="bg-surface-container-lowest rounded p-space-base shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col sm:flex-row gap-space-base items-start">
+<div class="w-full sm:w-44 h-36 rounded overflow-hidden relative flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Spectacular high altitude panoramic viewpoint looking out over Tokyo metropolitan skyline from Shibuya Sky open rooftop glass deck at golden hour, distant Mount Fuji outline on horizon, geometric glass balustrade reflection, sleek contemporary architectural vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzFVBSMxd_mA1AS2y2bNm4HsUnq0TLqRt8HQde2jxejqTOA6A2pYSpG5ggCnw6RO1sGTtfSi4wjz3KNpkO3x9jtVx7fXX527zjRz47uptisyDKG4kTN02WpPv8eisa12UMIT4aYAoP8_Ky_SGAHmmlqG9ax-zQeLz97fkObq6HA7Q3Dn__7HU2DilhLpS1m1U17VFt84mTozzcpk3BBmSPAVEvdSYwKM-5WLZhBSuS8N1OhMyVNEdb"/>
+<span class="absolute top-2 left-2 bg-on-background/80 text-surface backdrop-blur-sm font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded uppercase">Stop #02</span>
+<span class="absolute bottom-2 right-2 bg-surface/90 text-on-surface font-label-mono-sm text-[10px] px-1 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+              </span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Shibuya Sky Observation Deck</h2>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Shibuya Scramble Square 47F · Skyline & Modern Urbanism</p>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded hover:bg-surface-container-low transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="font-label-mono-sm text-[11px] bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">event_available</span> Day 2 · 10:30 AM
+                  </span>
+<span class="font-label-mono-sm text-[11px] bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded">Timed Ticket Booked (2x)</span>
+<span class="font-label-mono-sm text-[11px] bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">¥2,200</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                  360-degree open-air rooftop observatory 229 meters above Shibuya scramble crossing. Timed morning pass booked to beat mid-day clouds.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-surface-variant/40">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">confirmation_number</span> QR in Docs Vault</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-ui text-label-ui transition-colors">Show Voucher</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Place Card 5: Ginza Itoya Flagship -->
+<article class="bg-surface-container-lowest rounded p-space-base shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col sm:flex-row gap-space-base items-start">
+<div class="w-full sm:w-44 h-36 rounded overflow-hidden relative flex-shrink-0 bg-surface-container">
+<div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center text-center p-3 relative">
+<span class="material-symbols-outlined text-[36px] text-primary mb-1">edit_note</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface font-semibold">GINZA ITOYA (伊東屋)</span>
+<span class="font-label-mono-sm text-[9px] text-on-surface-variant">12 Floors of Paper & Design</span>
+<span class="absolute top-2 left-2 bg-on-background/80 text-surface backdrop-blur-sm font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded uppercase">Unassigned</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Ginza Itoya Stationery Flagship</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Ginza Chuo-dori · Architectural Paper & Fountain Pen Hall</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary p-1 rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="font-label-mono-sm text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lightbulb</span> Flexible Visit
+                  </span>
+<span class="font-label-mono-sm text-[11px] bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">Tax-Free Eligible</span>
+<span class="font-label-mono-sm text-[11px] bg-secondary-container text-on-secondary-container px-1.5 py-0.5 rounded">Fountain Pen Bar (3F)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+                  Iconic red paperclip landmark building with 1,000+ varieties of hand-crafted Japanese washi paper, bespoke traveler journals, and hydroponic indoor salad cafe.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-surface-variant/40">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">shopping_bag</span> Souvenir list (3 items)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-ui text-label-ui flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[13px]">calendar_add_on</span> Assign Day
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- RIGHT COLUMN: Interactive Spatial Map Canvas & Proximity Routing (40% ~ 5 cols) -->
+<aside class="lg:col-span-5 flex flex-col gap-space-base sticky top-20">
+<!-- Architectural Map Canvas Card -->
+<div class="bg-surface-container-lowest rounded overflow-hidden shadow-sm flex flex-col">
+<!-- Map Header & Layer Toolbar -->
+<div class="p-space-sm px-space-base bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">map</span>
+<span class="font-label-ui text-label-ui font-semibold text-on-surface">Tokyo Spatial Preview</span>
+<span class="font-label-mono-sm text-[10px] bg-surface text-on-surface-variant px-1.5 py-0.2 rounded font-mono">Day 2 Loop</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Toggle Transit Layer">
+<span class="material-symbols-outlined text-[14px]">subway</span>
+</button>
+<button class="w-6 h-6 rounded bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Walking Radius View">
+<span class="material-symbols-outlined text-[14px]">radar</span>
+</button>
+<button class="w-6 h-6 rounded bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Reset View">
+<span class="material-symbols-outlined text-[14px]">my_location</span>
+</button>
+</div>
+</div>
+<!-- High Precision Architectural Map Canvas -->
+<div class="relative w-full h-[360px] bg-[#f5f2ee] overflow-hidden select-none" id="map-viewport">
+<!-- Subtle Grid Lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="32" id="grid" patternunits="userSpaceOnUse" width="32">
+<path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ddd7d0" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<!-- Stylized Metro / Transit Lines -->
+<!-- Yamanote Loop (Soft Slate) -->
+<path d="M 60,60 C 60,180 80,310 180,320 C 260,325 320,260 310,140 C 300,50 180,40 60,60 Z" fill="none" stroke="#486172" stroke-dasharray="4 2" stroke-opacity="0.35" stroke-width="2"></path>
+<!-- Ginza Line (Warm Amber Accent) -->
+<path d="M 70,240 Q 180,180 340,110" fill="none" stroke="#bd553b" stroke-linecap="round" stroke-opacity="0.6" stroke-width="2.5"></path>
+<!-- Hanzomon Line (Sage Green) -->
+<path d="M 80,260 C 140,240 220,190 330,80" fill="none" stroke="#4c6156" stroke-dasharray="3 3" stroke-opacity="0.5" stroke-width="1.8"></path>
+<!-- Active Day 2 Walking Route Connection (Terracotta Highlight) -->
+<path class="animate-pulse" d="M 310,120 L 105,245 L 120,200 L 175,170" fill="none" stroke="#9d3d26" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<!-- Neighborhood Architectural Labels -->
+<span class="absolute top-8 left-14 font-label-mono-sm text-[10px] tracking-widest text-[#948b83] uppercase select-none pointer-events-none">Shinjuku</span>
+<span class="absolute top-1/2 left-6 font-label-mono-sm text-[10px] tracking-widest text-[#948b83] uppercase select-none pointer-events-none">Shibuya</span>
+<span class="absolute bottom-16 left-32 font-label-mono-sm text-[10px] tracking-widest text-[#948b83] uppercase select-none pointer-events-none">Roppongi</span>
+<span class="absolute top-14 right-14 font-label-mono-sm text-[10px] tracking-widest text-[#948b83] uppercase select-none pointer-events-none">Ginza / Tsukiji</span>
+<span class="absolute top-28 right-6 font-label-mono-sm text-[10px] tracking-widest text-[#948b83] uppercase select-none pointer-events-none">Koto City</span>
+<!-- Map Pin 1: Koffee Mameya Kakeru (Right side Koto) -->
+<div class="absolute top-[110px] right-[40px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group/pin">
+<div class="px-1.5 py-0.5 bg-on-surface text-surface rounded font-label-mono-sm text-[10px] font-semibold flex items-center gap-1 shadow-md group-hover/pin:scale-110 transition-transform">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 1 · Mameya
+            </div>
+<div class="w-2 h-2 bg-on-surface rotate-45 -mt-1"></div>
+</div>
+<!-- Map Pin 2: Shibuya Sky (Left Shibuya) -->
+<div class="absolute top-[245px] left-[105px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group/pin">
+<div class="px-1.5 py-0.5 bg-primary text-on-primary rounded font-label-mono-sm text-[10px] font-semibold flex items-center gap-1 shadow-md group-hover/pin:scale-110 transition-transform">
+<span>2 · Shibuya Sky</span>
+</div>
+<div class="w-2 h-2 bg-primary rotate-45 -mt-1"></div>
+</div>
+<!-- Map Pin 3: Afuri Ramen Harajuku -->
+<div class="absolute top-[200px] left-[120px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group/pin">
+<div class="w-5 h-5 rounded-full bg-surface text-on-surface font-label-mono-sm text-[10px] font-bold flex items-center justify-center shadow border-2 border-primary group-hover/pin:scale-125 transition-transform">
+              3
+            </div>
+</div>
+<!-- Map Pin 4: Nezu Museum (Minato) -->
+<div class="absolute top-[170px] left-[175px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group/pin">
+<div class="px-1.5 py-0.5 bg-surface text-on-surface rounded font-label-mono-sm text-[10px] font-medium flex items-center gap-1 shadow group-hover/pin:scale-110 transition-transform border border-surface-variant">
+<span>4 · Nezu Garden</span>
+</div>
+<div class="w-2 h-2 bg-surface rotate-45 -mt-1"></div>
+</div>
+<!-- Map Pin 5: Tsukiji Market (Center right) -->
+<div class="absolute top-[140px] right-[115px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group/pin">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface font-label-mono-sm text-[10px] font-bold flex items-center justify-center shadow group-hover/pin:scale-125 transition-transform">
+              5
+            </div>
+</div>
+<!-- On-Map Floating Overlay Zoom Controls -->
+<div class="absolute bottom-3 right-3 flex flex-col gap-1 bg-surface/90 backdrop-blur rounded p-0.5 shadow-sm">
+<button class="w-6 h-6 flex items-center justify-center text-on-surface hover:bg-surface-container rounded font-label-mono-sm text-xs font-bold">+</button>
+<button class="w-6 h-6 flex items-center justify-center text-on-surface hover:bg-surface-container rounded font-label-mono-sm text-xs font-bold">−</button>
+</div>
+<!-- On-Map Status Pill -->
+<div class="absolute bottom-3 left-3 bg-surface/90 backdrop-blur px-2 py-1 rounded font-label-mono-sm text-[10px] text-on-surface flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Day 2 Transit Active · 4 stops</span>
+</div>
+</div>
+<!-- Transit & Proximity Analysis Drawer -->
+<div class="p-space-base flex flex-col gap-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-[13px] font-semibold text-on-surface tracking-tight uppercase">Transit & Cluster Efficiency</h3>
+<span class="font-label-mono-sm text-[11px] text-tertiary font-medium">Optimal Order</span>
+</div>
+<!-- Cluster Card A -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-[11px] font-semibold text-primary">CLUSTER A</span>
+<span class="font-label-ui text-label-ui text-on-surface font-medium">Shibuya & Harajuku Corridor</span>
+</div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">3 spots · 1.2 km radius</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              Mameya → Shibuya Sky (Ginza Line direct 18m) → Afuri Harajuku (11m on foot via Cat Street). No transfers required.
+            </p>
+<div class="flex items-center gap-2 pt-1 font-label-mono-sm text-[10px] text-tertiary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">directions_walk</span> 14m walking total</span>
+<span>·</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">eco</span> Low transit strain</span>
+</div>
+</div>
+<!-- Cluster Card B -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-[11px] font-semibold text-secondary">CLUSTER B</span>
+<span class="font-label-ui text-label-ui text-on-surface font-medium">East Craft & Food (Koto / Ginza)</span>
+</div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">2 spots · Morning slot</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              Tsukiji Outer Market pairs seamlessly with Ginza Itoya Flagship. 12 minutes direct walk down Harumi-dori.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Add Place from Clipboard / URL -->
+<div class="bg-surface-container-low rounded p-space-base flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">link</span>
+<span>Quick Clip from Web or Maps</span>
+</span>
+<span class="font-label-mono-sm text-[10px] text-tertiary bg-tertiary-fixed px-1.5 py-0.2 rounded font-medium">Auto-Parser Active</span>
+</div>
+<div class="flex items-center gap-1.5">
+<input class="flex-1 px-3 py-1.5 bg-surface text-on-surface font-body-sm text-body-sm rounded placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Paste Google Maps URL, Tabelog, or Notion URL..." type="text"/>
+<button class="px-3 py-1.5 bg-primary text-on-primary hover:bg-primary-container font-label-ui text-label-ui font-medium rounded transition-transform active:translate-y-0.5">
+            Parse
+          </button>
+</div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">
+          Extracts Japanese business hours, coordinate geo-pin, pricing tier, and English translations automatically.
+        </span>
+</div>
+<!-- Daily Rhythm Quick Insight -->
+<div class="p-space-base rounded bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">sunny</span>
+</div>
+<div>
+<div class="font-label-ui text-label-ui font-medium text-on-surface">Spring Weather Forecast (Apr 4-6)</div>
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">H 21°C / L 13°C · Dry, gentle sun · Cherry blossoms peak</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</div>
+</aside>
+</main>
+</div>
+<script>
+  // Simple interactive keyboard shortcut hook for ⌘F search focus
+  document.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'f') {
+      const searchInput = document.getElementById('filter-input');
+      if (searchInput && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+    }
+  });
+
+  // Client micro-interaction on Add Place button
+  const addBtn = document.getElementById('add-place-trigger');
+  if (addBtn) {
+    addBtn.addEventListener('click', function() {
+      const searchInput = document.getElementById('filter-input');
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.placeholder = "Type new place name or address, then hit Enter...";
+      }
+    });
+  }
+</script></main></div></body></html>

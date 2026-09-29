@@ -1,0 +1,21 @@
+{
+  "name": "Wanderly Travel Workspace",
+  "short_name": "Wanderly",
+  "description": "Editorial travel workspace with offline vault, weather sync, and smart itinerary planning.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#fdfaf7",
+  "theme_color": "#9d3d26",
+  "icons": [
+    {
+      "src": "/images/avatar-alex.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/avatar-alex.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS documents;
+DROP TABLE IF EXISTS saved_places;
+DROP TABLE IF EXISTS expenses;
+DROP TABLE IF EXISTS packing_items;
+DROP TABLE IF EXISTS trip_todos;
+DROP TABLE IF EXISTS itinerary_activities;
+DROP TABLE IF EXISTS itinerary_days;
+DROP TABLE IF EXISTS trips;
+DROP TABLE IF EXISTS refresh_tokens;
+DROP TABLE IF EXISTS users;
