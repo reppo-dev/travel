@@ -31,9 +31,10 @@ func main() {
 	}
 	defer sqlDB.Close()
 
-	sqlDB.SetMaxOpenConns(25)
-	sqlDB.SetMaxIdleConns(5)
-	sqlDB.SetConnMaxLifetime(5 * time.Minute)
+	sqlDB.SetMaxOpenConns(10)
+	sqlDB.SetMaxIdleConns(10)
+	sqlDB.SetConnMaxLifetime(30 * time.Minute)
+	sqlDB.SetConnMaxIdleTime(5 * time.Minute)
 
 	if err := sqlDB.Ping(); err != nil {
 		log.Fatalf("Failed to ping PostgreSQL: %v", err)

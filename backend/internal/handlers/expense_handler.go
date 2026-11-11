@@ -45,6 +45,9 @@ func (h *ExpenseHandler) ListExpenses(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch expenses"})
 	}
 
+	if expenses == nil {
+		expenses = []db.Expense{}
+	}
 	return c.JSON(expenses)
 }
 

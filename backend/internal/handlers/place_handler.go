@@ -47,6 +47,9 @@ func (h *PlaceHandler) ListPlaces(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch places"})
 	}
 
+	if places == nil {
+		places = []db.SavedPlace{}
+	}
 	return c.JSON(places)
 }
 

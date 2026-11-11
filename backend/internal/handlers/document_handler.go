@@ -45,6 +45,9 @@ func (h *DocumentHandler) ListDocuments(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch documents"})
 	}
 
+	if docs == nil {
+		docs = []db.Document{}
+	}
 	return c.JSON(docs)
 }
 
