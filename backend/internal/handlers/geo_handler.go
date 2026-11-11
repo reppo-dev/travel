@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -99,6 +100,7 @@ func (h *GeoHandler) SearchLocations(c *fiber.Ctx) error {
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to read response body", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to read response body"})
 	}
 
@@ -141,6 +143,7 @@ func (h *GeoHandler) GetWeather(c *fiber.Ctx) error {
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to read weather response", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to read weather response"})
 	}
 

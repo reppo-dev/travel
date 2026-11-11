@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 	"time"
 
@@ -37,8 +38,9 @@ func (h *TodoHandler) ListTodos(c *fiber.Ctx) error {
 		return err
 	}
 
-	todos, err := h.queries.ListTodosByTripID(c.Context(), tripID)
+	todos, err := h.queries.ListTodosByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch todos", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch todos"})
 	}
 	if todos == nil {
@@ -86,7 +88,7 @@ func (h *TodoHandler) CreateTodo(c *fiber.Ctx) error {
 		priority = req.Priority
 	}
 
-	todo, err := h.queries.CreateTodo(c.Context(), db.CreateTodoParams{
+	todo, err := h.queries.CreateTodo(c.UserContext(), db.CreateTodoParams{
 		TripID:      tripID,
 		Title:       req.Title,
 		DueDate:     dueDate,
@@ -96,6 +98,7 @@ func (h *TodoHandler) CreateTodo(c *fiber.Ctx) error {
 		Notes:       sql.NullString{String: req.Notes, Valid: req.Notes != ""},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create todo", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create todo"})
 	}
 
@@ -119,8 +122,9 @@ func (h *TodoHandler) ToggleTodo(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid todo ID"})
 	}
 
-	updated, err := h.queries.ToggleTodo(c.Context(), todoID)
+	updated, err := h.queries.ToggleTodo(c.UserContext(), todoID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to toggle todo", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to toggle todo"})
 	}
 
@@ -144,7 +148,7 @@ func (h *TodoHandler) DeleteTodo(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid todo ID"})
 	}
 
-	if err := h.queries.DeleteTodo(c.Context(), todoID); err != nil {
+	if err := h.queries.DeleteTodo(c.UserContext(), todoID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete todo"})
 	}
 

@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 
 	"github.com/gofiber/fiber/v2"
@@ -40,8 +41,9 @@ func (h *PlaceHandler) ListPlaces(c *fiber.Ctx) error {
 		return err
 	}
 
-	places, err := h.queries.ListSavedPlacesByTripID(c.Context(), tripID)
+	places, err := h.queries.ListSavedPlacesByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch places", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch places"})
 	}
 
@@ -78,7 +80,7 @@ func (h *PlaceHandler) CreatePlace(c *fiber.Ctx) error {
 		category = req.Category
 	}
 
-	place, err := h.queries.CreateSavedPlace(c.Context(), db.CreateSavedPlaceParams{
+	place, err := h.queries.CreateSavedPlace(c.UserContext(), db.CreateSavedPlaceParams{
 		TripID:       tripID,
 		Title:        req.Title,
 		Category:     category,
@@ -92,6 +94,7 @@ func (h *PlaceHandler) CreatePlace(c *fiber.Ctx) error {
 		IsVisited:    req.IsVisited,
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create place", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create place"})
 	}
 
@@ -115,8 +118,9 @@ func (h *PlaceHandler) ToggleVisited(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid place ID"})
 	}
 
-	updated, err := h.queries.ToggleSavedPlaceVisited(c.Context(), placeID)
+	updated, err := h.queries.ToggleSavedPlaceVisited(c.UserContext(), placeID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to toggle place visited status", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to toggle place visited status"})
 	}
 
@@ -140,7 +144,7 @@ func (h *PlaceHandler) DeletePlace(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid place ID"})
 	}
 
-	if err := h.queries.DeleteSavedPlace(c.Context(), placeID); err != nil {
+	if err := h.queries.DeleteSavedPlace(c.UserContext(), placeID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete place"})
 	}
 

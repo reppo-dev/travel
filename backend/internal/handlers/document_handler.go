@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 	"time"
 
@@ -38,8 +39,9 @@ func (h *DocumentHandler) ListDocuments(c *fiber.Ctx) error {
 		return err
 	}
 
-	docs, err := h.queries.ListDocumentsByTripID(c.Context(), tripID)
+	docs, err := h.queries.ListDocumentsByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch documents", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch documents"})
 	}
 
@@ -78,7 +80,7 @@ func (h *DocumentHandler) CreateDocument(c *fiber.Ctx) error {
 		docType = req.DocType
 	}
 
-	doc, err := h.queries.CreateDocument(c.Context(), db.CreateDocumentParams{
+	doc, err := h.queries.CreateDocument(c.UserContext(), db.CreateDocumentParams{
 		TripID:           tripID,
 		Title:            req.Title,
 		DocType:          docType,
@@ -89,6 +91,7 @@ func (h *DocumentHandler) CreateDocument(c *fiber.Ctx) error {
 		Notes:            sql.NullString{String: req.Notes, Valid: req.Notes != ""},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create document", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create document"})
 	}
 
@@ -112,7 +115,7 @@ func (h *DocumentHandler) DeleteDocument(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid document ID"})
 	}
 
-	if err := h.queries.DeleteDocument(c.Context(), docID); err != nil {
+	if err := h.queries.DeleteDocument(c.UserContext(), docID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete document"})
 	}
 

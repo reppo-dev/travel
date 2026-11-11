@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 	"time"
 
@@ -38,8 +39,9 @@ func (h *ExpenseHandler) ListExpenses(c *fiber.Ctx) error {
 		return err
 	}
 
-	expenses, err := h.queries.ListExpensesByTripID(c.Context(), tripID)
+	expenses, err := h.queries.ListExpensesByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch expenses", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch expenses"})
 	}
 
@@ -57,8 +59,9 @@ func (h *ExpenseHandler) GetExpenseSummary(c *fiber.Ctx) error {
 		return err
 	}
 
-	summary, err := h.queries.GetExpenseSummaryByTripID(c.Context(), tripID)
+	summary, err := h.queries.GetExpenseSummaryByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch expense summary", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch expense summary"})
 	}
 
@@ -102,7 +105,7 @@ func (h *ExpenseHandler) CreateExpense(c *fiber.Ctx) error {
 		currency = req.Currency
 	}
 
-	expense, err := h.queries.CreateExpense(c.Context(), db.CreateExpenseParams{
+	expense, err := h.queries.CreateExpense(c.UserContext(), db.CreateExpenseParams{
 		TripID:      tripID,
 		Title:       req.Title,
 		Category:    category,
@@ -113,6 +116,7 @@ func (h *ExpenseHandler) CreateExpense(c *fiber.Ctx) error {
 		Notes:       sql.NullString{String: req.Notes, Valid: req.Notes != ""},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create expense", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create expense"})
 	}
 
@@ -136,7 +140,7 @@ func (h *ExpenseHandler) DeleteExpense(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid expense ID"})
 	}
 
-	if err := h.queries.DeleteExpense(c.Context(), expenseID); err != nil {
+	if err := h.queries.DeleteExpense(c.UserContext(), expenseID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete expense"})
 	}
 

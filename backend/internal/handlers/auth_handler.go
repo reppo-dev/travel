@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 	"time"
 
@@ -56,13 +57,14 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Email, password, and name are required"})
 	}
 
-	existingUser, err := h.queries.GetUserByEmail(c.Context(), req.Email)
+	existingUser, err := h.queries.GetUserByEmail(c.UserContext(), req.Email)
 	if err == nil && existingUser.ID != uuid.Nil {
 		return c.Status(fiber.StatusConflict).JSON(fiber.Map{"error": "User with this email already exists"})
 	}
 
 	hash, err := auth.HashPassword(req.Password)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to hash password", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to hash password"})
 	}
 
@@ -71,7 +73,7 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 		currency = req.Currency
 	}
 
-	user, err := h.queries.CreateUser(c.Context(), db.CreateUserParams{
+	user, err := h.queries.CreateUser(c.UserContext(), db.CreateUserParams{
 		Email:        req.Email,
 		PasswordHash: hash,
 		Name:         req.Name,
@@ -79,25 +81,29 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 		Currency:     sql.NullString{String: currency, Valid: true},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create user", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create user"})
 	}
 
 	accessToken, err := auth.GenerateAccessToken(user.ID, user.Email, user.Name, h.cfg.JWTSecret, h.cfg.JWTAccessExpiry)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate access token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate access token"})
 	}
 
 	rawRefresh, hashRefresh, err := auth.GenerateRefreshToken()
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate refresh token"})
 	}
 
-	_, err = h.queries.CreateRefreshToken(c.Context(), db.CreateRefreshTokenParams{
+	_, err = h.queries.CreateRefreshToken(c.UserContext(), db.CreateRefreshTokenParams{
 		UserID:    user.ID,
 		TokenHash: hashRefresh,
 		ExpiresAt: time.Now().Add(h.cfg.JWTRefreshExpiry),
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to store refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to store refresh token"})
 	}
 
@@ -114,7 +120,7 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid request payload"})
 	}
 
-	user, err := h.queries.GetUserByEmail(c.Context(), req.Email)
+	user, err := h.queries.GetUserByEmail(c.UserContext(), req.Email)
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid email or password"})
 	}
@@ -125,20 +131,23 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 
 	accessToken, err := auth.GenerateAccessToken(user.ID, user.Email, user.Name, h.cfg.JWTSecret, h.cfg.JWTAccessExpiry)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate access token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate access token"})
 	}
 
 	rawRefresh, hashRefresh, err := auth.GenerateRefreshToken()
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate refresh token"})
 	}
 
-	_, err = h.queries.CreateRefreshToken(c.Context(), db.CreateRefreshTokenParams{
+	_, err = h.queries.CreateRefreshToken(c.UserContext(), db.CreateRefreshTokenParams{
 		UserID:    user.ID,
 		TokenHash: hashRefresh,
 		ExpiresAt: time.Now().Add(h.cfg.JWTRefreshExpiry),
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to store refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to store refresh token"})
 	}
 
@@ -160,35 +169,38 @@ func (h *AuthHandler) Refresh(c *fiber.Ctx) error {
 	}
 
 	hash := auth.HashRefreshToken(req.RefreshToken)
-	storedToken, err := h.queries.GetRefreshToken(c.Context(), hash)
+	storedToken, err := h.queries.GetRefreshToken(c.UserContext(), hash)
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid or expired refresh token"})
 	}
 
 	// Revoke the old token (rotation)
-	_ = h.queries.RevokeRefreshToken(c.Context(), hash)
+	_ = h.queries.RevokeRefreshToken(c.UserContext(), hash)
 
-	user, err := h.queries.GetUserByID(c.Context(), storedToken.UserID)
+	user, err := h.queries.GetUserByID(c.UserContext(), storedToken.UserID)
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "User not found"})
 	}
 
 	newAccessToken, err := auth.GenerateAccessToken(user.ID, user.Email, user.Name, h.cfg.JWTSecret, h.cfg.JWTAccessExpiry)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate access token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate access token"})
 	}
 
 	newRawRefresh, newHashRefresh, err := auth.GenerateRefreshToken()
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to generate new refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to generate new refresh token"})
 	}
 
-	_, err = h.queries.CreateRefreshToken(c.Context(), db.CreateRefreshTokenParams{
+	_, err = h.queries.CreateRefreshToken(c.UserContext(), db.CreateRefreshTokenParams{
 		UserID:    user.ID,
 		TokenHash: newHashRefresh,
 		ExpiresAt: time.Now().Add(h.cfg.JWTRefreshExpiry),
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to store new refresh token", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to store new refresh token"})
 	}
 
@@ -205,7 +217,7 @@ func (h *AuthHandler) Me(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
 	}
 
-	user, err := h.queries.GetUserByID(c.Context(), userID)
+	user, err := h.queries.GetUserByID(c.UserContext(), userID)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "User not found"})
 	}

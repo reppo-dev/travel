@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 	"encoding/json"
 	"fmt"
@@ -85,8 +86,9 @@ func (h *TripHandler) ListTrips(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
 	}
 
-	trips, err := h.queries.ListTripsByUserID(c.Context(), userID)
+	trips, err := h.queries.ListTripsByUserID(c.UserContext(), userID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch trips", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch trips"})
 	}
 
@@ -149,7 +151,7 @@ func (h *TripHandler) CreateTrip(c *fiber.Ctx) error {
 	}
 
 	tagLabelStr := string(req.TagLabel)
-	trip, err := h.queries.CreateTrip(c.Context(), db.CreateTripParams{
+	trip, err := h.queries.CreateTrip(c.UserContext(), db.CreateTripParams{
 		UserID:         userID,
 		Title:          req.Title,
 		Destination:    req.Destination,
@@ -165,6 +167,7 @@ func (h *TripHandler) CreateTrip(c *fiber.Ctx) error {
 		TagLabel:       sql.NullString{String: tagLabelStr, Valid: tagLabelStr != ""},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create trip", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create trip"})
 	}
 
@@ -179,7 +182,7 @@ func (h *TripHandler) CreateTrip(c *fiber.Ctx) error {
 
 	for i := 1; i <= daysCount; i++ {
 		dayDate := startDate.AddDate(0, 0, i-1)
-		_, _ = h.queries.CreateItineraryDay(c.Context(), db.CreateItineraryDayParams{
+		_, _ = h.queries.CreateItineraryDay(c.UserContext(), db.CreateItineraryDayParams{
 			TripID:    trip.ID,
 			DayNumber: int32(i),
 			Date:      dayDate,
@@ -224,7 +227,7 @@ func (h *TripHandler) UpdateTrip(c *fiber.Ctx) error {
 
 	coverImageStr := string(req.CoverImageUrl)
 	tagLabelStr := string(req.TagLabel)
-	updated, err := h.queries.UpdateTrip(c.Context(), db.UpdateTripParams{
+	updated, err := h.queries.UpdateTrip(c.UserContext(), db.UpdateTripParams{
 		ID:             tripID,
 		Title:          req.Title,
 		Destination:    req.Destination,
@@ -240,6 +243,7 @@ func (h *TripHandler) UpdateTrip(c *fiber.Ctx) error {
 		TagLabel:       sql.NullString{String: tagLabelStr, Valid: tagLabelStr != ""},
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to update trip", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to update trip"})
 	}
 
@@ -257,7 +261,7 @@ func (h *TripHandler) DeleteTrip(c *fiber.Ctx) error {
 		return err
 	}
 
-	if err := h.queries.DeleteTrip(c.Context(), tripID); err != nil {
+	if err := h.queries.DeleteTrip(c.UserContext(), tripID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete trip"})
 	}
 

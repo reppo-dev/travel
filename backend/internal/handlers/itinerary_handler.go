@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"database/sql"
 
 	"github.com/gofiber/fiber/v2"
@@ -32,14 +33,15 @@ func (h *ItineraryHandler) ListDays(c *fiber.Ctx) error {
 		return err
 	}
 
-	days, err := h.queries.ListItineraryDaysByTripID(c.Context(), tripID)
+	days, err := h.queries.ListItineraryDaysByTripID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to fetch itinerary days", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch itinerary days"})
 	}
 
 	result := make([]DayWithActivities, len(days))
 	for i, day := range days {
-		activities, err := h.queries.ListActivitiesByDayID(c.Context(), day.ID)
+		activities, err := h.queries.ListActivitiesByDayID(c.UserContext(), day.ID)
 		if err != nil {
 			activities = []db.ItineraryActivity{}
 		}
@@ -104,7 +106,7 @@ func (h *ItineraryHandler) CreateActivity(c *fiber.Ctx) error {
 		cost = req.Cost
 	}
 
-	activity, err := h.queries.CreateActivity(c.Context(), db.CreateActivityParams{
+	activity, err := h.queries.CreateActivity(c.UserContext(), db.CreateActivityParams{
 		DayID:        dayID,
 		TimeSlot:     timeSlot,
 		Title:        req.Title,
@@ -120,6 +122,7 @@ func (h *ItineraryHandler) CreateActivity(c *fiber.Ctx) error {
 		SortOrder:    req.SortOrder,
 	})
 	if err != nil {
+		log.Printf("[Handler Error] %v: %v", "Failed to create activity", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to create activity"})
 	}
 
@@ -143,7 +146,7 @@ func (h *ItineraryHandler) DeleteActivity(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid activity ID"})
 	}
 
-	if err := h.queries.DeleteActivity(c.Context(), activityID); err != nil {
+	if err := h.queries.DeleteActivity(c.UserContext(), activityID); err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to delete activity"})
 	}
 

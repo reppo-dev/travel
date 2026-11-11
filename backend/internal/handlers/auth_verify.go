@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 	"github.com/v-urit/travel/internal/db"
@@ -16,14 +18,15 @@ func verifyTripOwnership(c *fiber.Ctx, q *db.Queries, tripID uuid.UUID) (*db.Tri
 		return nil, fiber.ErrUnauthorized
 	}
 
-	trip, err := q.GetTripByID(c.Context(), tripID)
+	trip, err := q.GetTripByID(c.UserContext(), tripID)
 	if err != nil {
+		log.Printf("[verifyTripOwnership] GetTripByID error for trip %s: %v", tripID, err)
 		_ = c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Trip not found"})
 		return nil, fiber.ErrNotFound
 	}
 
 	if trip.UserID != userID {
-		// Return 404 to avoid leaking existence of other users' trips
+		log.Printf("[verifyTripOwnership] Unauthorized: user %s does not own trip %s (owned by %s)", userID, tripID, trip.UserID)
 		_ = c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Trip not found or unauthorized"})
 		return nil, fiber.ErrNotFound
 	}
